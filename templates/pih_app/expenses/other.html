@@ -1,0 +1,76 @@
+{% extends "pih_app/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+
+<div class="container">
+    <img src="{% static "images/form_step8.svg" %}" alt="" style="margin-top:20px;" align="center">
+
+    <div class="row justify-content-center" style="margin-top: 20px">
+        <h3> Submit new Request</h3>
+    </div>
+    <div class="row justify-content-center">
+        <h5>Add Other Expenses</h5>
+    </div>
+</div>
+
+<div class="container" align="center">
+<strong> There are no other expenses:</strong> <input type="checkbox"  checked id="other-checkbox" style="width:15px;height:15px"><br>
+    <a href="{% url "pih_app:preview_submission" %}" class="btn btn-primary" style="margin-top: 20px" id="initial-button">Confirm & Next</a>
+</div>
+
+<div class="container" style="margin-top: 20px; margin-bottom: 20px; margin-left:30%; display: none" id="other-expense-form">
+    <form action="" method="post">
+    {% csrf_token %}
+        <div class="form-group">
+            <div class="form-group" >
+                <label for="id_notes">Please Describe any other expenses</label>
+            <div class="row" style="margin-left:10px">
+                <textarea name="notes" id="id_notes" cols="100" rows="5" maxlength="1000"></textarea>
+            </div>
+        </div>
+        <p>{{ form.organized_by_us.label_tag }}
+            <input type="checkbox" name="organized_by_us" id="id_organized_by_us" style="width:15px;height: 15px">
+        </p>
+        <p id="organizer_name" style="display:none">
+            {{ form.name_of_organizer.label_tag }}{{ form.name_of_organizer }}
+        </p>
+        <p>
+            {{ form.expenses_covered_by.label_tag }}{{ form.expenses_covered_by }}
+        </p>
+        <p id="expensed_amount" style="display:none">
+            {{ form.expenses_amount.label_tag }}{{ form.expenses_amount }}
+        </p>
+
+        </div>
+        <input type="submit" value="Confirm & Next" class="btn btn-primary">
+    </form>
+
+</div>
+<div class="container" align="center">
+<button class="btn btn-secondary" onclick="goBack()" style="margin-top: 20px" >Go Back</button>
+</div>
+
+{% endblock %}
+
+
+{% block customjs %}
+ <script>
+    function goBack() {
+  window.history.back();
+}
+
+$("#other-checkbox").click(function(){
+    if ($(this).prop('checked')==false){
+        $("#initial-button").css('display','none');
+        $("#other-expense-form").css('display','block')
+    }
+    else {
+        $("#initial-button").css('display','inline-block');
+        $("#other-expense-form").css('display','none')
+    }
+                                    })
+</script>
+<script src="{% static "js/expense.js" %}"></script>
+{% endblock %}

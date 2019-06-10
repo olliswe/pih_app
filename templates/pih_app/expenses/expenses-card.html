@@ -1,0 +1,44 @@
+<div class="card" style="margin-top:20px;margin-bottom: 20px">
+    <div class="card-header"><strong>{{ expense.type }}</strong>
+    {% if expense.type == 'Flights' %}
+        <i class="fas fa-plane"></i>
+    {% elif expense.type == 'Visa' %}
+        <i class="fas fa-book"></i>
+    {% elif expense.type == 'Transport' %}
+        <i class="fas fa-car"></i>
+    {% elif expense.type == 'Accommodation' %}
+        <i class="fas fa-building"></i>
+    {% elif expense.type == 'Seacoach' %}
+        <i class="fas fa-ship"></i>
+    {% endif %}
+
+    </div>
+    <div class="card-body">
+    <div class="row" style="margin-bottom:10px">
+        <div class="col-md-4">
+            <strong>Organised by us:</strong> {% if expense.organized_by_us %}Yes{% else %}No{% endif %}
+        </div>
+        {% if expense.organized_by_us %}
+        <strong>Name of Organizer</strong>
+        <div class="col-md-4">{{expense.name_of_organizer}}</div>
+        {% endif %}
+    </div>
+    <div class="row" style="margin-bottom: 10px">
+        <div class="col-md-6" >
+            <strong>Expenses covered by: </strong> {{ expense.expenses_covered_by }}
+        </div>
+        {% if expense.expenses_amount %}
+         <div class="col-md-6">
+            <strong>Expense amount: </strong>{{ expense.expenses_amount }} USD
+         </div>
+        {% endif %}
+    </div>
+    <div class="row" style="margin-bottom:10px">
+        <div class="col-md-10">
+            <strong>Additional Notes:</strong> {{ expense.notes | linebreaks }}
+        </div>
+
+    </div>
+
+    </div>
+</div>

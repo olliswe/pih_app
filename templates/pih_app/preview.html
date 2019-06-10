@@ -1,0 +1,71 @@
+{% extends "pih_app/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="container">
+    <img src="{% static "images/form_step9.svg" %}" alt="" style="margin-top:20px;align-content:center;margin-left: 20px" >
+    <div class="row justify-content-center" style="margin-top: 20px">
+        <h3>Submit new request</h3>
+    </div>
+<div class="container" style="margin-left: 50px">
+<div class="card">
+<div class="card-header">
+    <strong>Preview Submission</strong>
+</div>
+<div class="card-body" style="margin-left: 50px">
+    <div class="row" style="margin-bottom: 10px">
+        <strong>Number of visitors: &nbsp;</strong> {{ request.session.request_form_data.num_visitors }} &nbsp; &nbsp;
+    {% if request.session.request_form_data.other_place %}
+        <strong>Departure Place:&nbsp;</strong> {{ request.session.request_form_data.other_place }}
+    {% else %}
+        <strong>Departure Place:&nbsp;</strong> {{ request.session.request_form_data.departure_place}}
+    {% endif %}
+    </div>
+
+    <div class="row" style="margin-bottom: 10px">
+        <strong>Purpose of visit:</strong>
+    </div>
+    <div class="row" style="margin-bottom: 10px">{{ request.session.request_form_data.purpose }}</div>
+    <div class="row" style="margin-bottom: 10px">
+        <strong>Arrival date : &nbsp;</strong> {{ request.session.request_form_data.arrival_date }}
+    </div>
+    <div class="row" style="margin-bottom: 10px">
+        <strong>Departure date (estimated) : </strong> &nbsp;{{ request.session.request_form_data.departure_date }}
+    </div>
+    <div class="row"><strong>Visitors:</strong></div>
+    {% for visitor in request.session.visitor_data %}
+        <div class="row" style="margin-left: 20px">{{ visitor.name }}</div>
+    {% endfor %}
+
+
+{% include "pih_app/expenses/expenses-card.html" with expense=request.session.flights %}
+{% include "pih_app/expenses/expenses-card.html" with expense=request.session.visa %}
+{% include "pih_app/expenses/expenses-card.html" with expense=request.session.accommodation %}
+{% include "pih_app/expenses/expenses-card.html" with expense=request.session.transport %}
+{% include "pih_app/expenses/expenses-card.html" with expense=request.session.seacoach %}
+{% if request.session.other %}
+{% include "pih_app/expenses/expenses-card.html" with expense=request.session.other %}
+{% endif %}
+
+</div>
+
+
+</div>
+</div>
+
+<div class="container" style="margin:40px" align="center">
+<form action="" method="post">
+    {% csrf_token %}
+        <input type="submit" value="Submit Request!" class="btn btn-primary">
+    </form>
+    <button class="btn btn-secondary" onclick="goBack()" style="margin-top: 20px">Go Back</button>
+</div>
+{% endblock %}
+
+{% block customjs %}
+        <script>
+    function goBack() {
+  window.history.back();
+}
+    </script>
+{% endblock %}

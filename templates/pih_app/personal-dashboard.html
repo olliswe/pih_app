@@ -1,0 +1,60 @@
+{% extends 'pih_app/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center" style="margin-top:20px; margin-bottom: 20px">
+        <h2>Dashboard: {{ request.user }}</h2>
+    </div>
+
+    <div class="row justify-content-around">
+        <div class="col-sm-3" style="margin-bottom: 20px">
+            <div class="card h-100" style="width: 100%;" >
+                <img class="card-img-top" src="{% static "images/review.svg" %}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ requests_pending_review.count }} Request(s) pending review</h5>
+                                <a href="" class="btn btn-primary">View Requests</a>
+                    </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3" style="margin-bottom: 20px">
+            <div class="card h-100" style="width: 100%;" >
+                <img class="card-img-top" src="{% static "images/approved.svg" %}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ approved_requests.count }} Request(s) Approved</h5><br>
+                                <a href="" class="btn btn-primary">View Requests</a>
+                    </div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-3" style="margin-bottom: 20px">
+            <div class="card h-100" style="width: 100%;" >
+                <img class="card-img-top" src="{% static "images/rejected.svg" %}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ rejected_requests.count }} Request(s) Rejected</h5><br>
+                                <a href="" class="btn btn-primary">View Requests</a>
+                    </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3" style="margin-bottom: 20px">
+            <div class="card h-100" style="width: 100%;" >
+                <img class="card-img-top" src="{% static "images/organize.svg" %}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ items_need_organizing.count }} Item(s) that need organizing</h5>
+                                <a href="" class="btn btn-primary">View Items</a>
+                    </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+</div>
+
+
+
+{% endblock %}

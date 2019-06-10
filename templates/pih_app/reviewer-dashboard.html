@@ -2,7 +2,59 @@
 {% load staticfiles %}
 
 {% block content %}
-    <div class="row justify-content-center">
-        Reviewer Dashboard
+<div class="container">
+    <div class="row justify-content-center" style="margin-top:20px; margin-bottom: 20px">
+        <h2>Dashboard: PIH Sierra Leone</h2>
     </div>
+
+    <div class="row justify-content-around">
+        <div class="col-sm-3" style="margin-bottom: 20px">
+            <div class="card h-100" style="width: 100%;" >
+                <img class="card-img-top" src="{% static "images/review.svg" %}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ requests_under_review.count }} Request(s) awaiting approval</h5>
+                                <a href="{% url "pih_app:pending_review" %}" class="btn btn-primary">View Requests</a>
+                    </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3" style="margin-bottom: 20px">
+            <div class="card h-100" style="width: 100%;" >
+                <img class="card-img-top" src="{% static "images/approved.svg" %}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ approved_requests.count }} Request(s) Approved</h5><br>
+                                <a href="" class="btn btn-primary">View Requests</a>
+                    </div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-3" style="margin-bottom: 20px">
+            <div class="card h-100" style="width: 100%;" >
+                <img class="card-img-top" src="{% static "images/expenses.svg" %}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ outstanding_expenses.count }} Expenses(s) to be paid out</h5>
+                                <a href="" class="btn btn-primary">View Expenses</a>
+                    </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3" style="margin-bottom: 20px">
+            <div class="card h-100" style="width: 100%;" >
+                <img class="card-img-top" src="{% static "images/reimburse.svg" %}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ expenses_need_reimbursement.count }} Expense(s) to be reimbursed</h5>
+                                <a href="" class="btn btn-primary">View Expenses</a>
+                    </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+</div>
+
+
+
 {% endblock %}

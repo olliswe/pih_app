@@ -1,0 +1,19 @@
+{% extends "pih_app/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center" style="margin:30px">
+        <h3>Your Request was successfully submitted, and has been given ID : {{ request_form.id }}</h3>
+    </div>
+    <div class="row justify-content-center" style="margin:30px;margin-right:140px">
+        <img src="{% static "images/success.svg" %}" alt="">
+    </div>
+    <div class="row justify-content-center" style="margin:30px">
+        <a href="{% url "pih_app:personal_dashboard" %}" class="btn btn-primary">Go to Dashboard</a>
+    </div>
+    <div class="row justify-content-center" style="margin:30px">
+        <a href="{% url "pih_app:submit_request" %}" class="btn btn-secondary">Submit another Request</a>
+    </div>
+</div>
+{% endblock %}

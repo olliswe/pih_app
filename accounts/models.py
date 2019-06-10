@@ -71,7 +71,6 @@ class User(AbstractBaseUser): # from step 2
     admin = models.BooleanField(default=False)  # a superuser
     # notice the absence of a "Password field", that's built in.
     reviewer = models.BooleanField(default=False, verbose_name="Reviewer")
-    submitter = models.BooleanField(default=False, verbose_name="Submitter")
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['first_name','last_name','position']  # Email & Password are required by default.

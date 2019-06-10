@@ -1,0 +1,72 @@
+{% extends "pih_app/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="container">
+    <a class="btn btn-secondary" href = "{% url 'pih_app:pending_review' %}" style="margin-top: 10px">Return</a>
+    <div class="row justify-content-center" >
+        <h3>Review Request ID: {{ r.id }}</h3>
+    </div>
+
+<div class="container" style="margin-left: 50px; margin-bottom:30px">
+<div class="card">
+<div class="card-header">
+    <strong>Request submitted on {{ r.submission_date }} by {{ r.host }}</strong>
+</div>
+<div class="card-body" style="margin-left: 50px">
+    <div class="row" style="margin-bottom: 10px">
+        <strong>Number of visitors: &nbsp;</strong> {{ r.num_visitors }} &nbsp; &nbsp;
+    {% if r.other_place %}
+        <strong>Departure Place:&nbsp;</strong> {{ r.other_place }}
+    {% else %}
+        <strong>Departure Place:&nbsp;</strong> {{ r.departure_place}}
+    {% endif %}
+    </div>
+
+    <div class="row" style="margin-bottom: 10px">
+        <strong>Purpose of visit:</strong>
+    </div>
+    <div class="row" style="margin-bottom: 10px">{{ r.purpose }}</div>
+    <div class="row" style="margin-bottom: 10px">
+        <strong>Arrival date : &nbsp;</strong> {{ r.arrival_date }}
+    </div>
+    <div class="row" style="margin-bottom: 10px">
+        <strong>Departure date (estimated) : </strong> &nbsp;{{ r.departure_date }}
+    </div>
+    <div class="row"><strong>Visitors:</strong></div>
+    {% for visitor in r.visitor_set.all %}
+        <div class="row" style="margin-left: 20px">{{ visitor.name }}</div>
+    {% endfor %}
+
+
+{% for expense in r.expense_set.all %}
+
+    {% include "pih_app/expenses/expenses-card.html" with expense=expense %}
+
+{% endfor %}
+
+<div class="row justify-content-around">
+    <div class="btn btn-success" data-toggle="modal" data-target="#approval-modal">Approve Request</div>
+    <div class="btn btn-danger"  data-toggle="modal" data-target="#rejection-modal">Reject Request</div>
+</div>
+
+{% include "pih_app/modals/approve-modal.html" %}
+{% include "pih_app/modals/reject-modal.html" %}
+
+
+</div>
+
+
+</div>
+</div>
+
+
+
+
+
+{% endblock %}
+
+{% block customjs %}
+
+{% endblock %}
