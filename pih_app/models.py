@@ -65,29 +65,89 @@ class Request(models.Model):
 
     def get_status(self):
         return dict(Request.STATUS_CHOICES)[self.status]
+    #
+    #
+    # def is_archived(self):
+    #
+    #     if self.status == 'rejected':
+    #         return True
+    #
+    #     elif self.status == 'review':
+    #         return False
+    #
+    #     for expense in self.expense_set.all():
+    #         if expense.organized_by_us==True and expense.is_organized==False:
+    #             return False
+    #
+    #         elif expense.expenses_covered_by=="Covered by us but reimbursed" and expense.expense_reimbursed == False:
+    #             return False
+    #
+    #     return True
 
 
-    def is_archived(self):
-
-        if self.status == 'rejected':
-            return True
-
-        elif self.status == 'review':
-            return False
+    def organization_completed(self):
+        completed = True
 
         for expense in self.expense_set.all():
             if expense.organized_by_us==True and expense.is_organized==False:
-                return False
+                completed = False
 
-            elif expense.expenses_covered_by=="Covered by us but reimbursed" and expense.expense_reimbursed == False:
-                return False
+        return completed
 
-        return True
+
+    def get_organized_counter(self):
+        counter = [0,0]
+
+        for expense in self.expense_set.all():
+            if expense.organized_by_us == True :
+                counter[1] += 1
+                if expense.is_organized == False:
+                    counter[0] += 1
+
+        return counter
+
+
+    def reimbursement_completed(self):
+        completed = True
+
+        for expense in self.expense_set.all():
+            if expense.expenses_covered_by == "Covered by us but reimbursed" and expense.expense_reimbursed == False:
+                completed = False
+
+        return completed
+
+
+    def get_reimbursement_counter(self):
+        counter = [0, 0]
+
+        for expense in self.expense_set.all():
+            if expense.expenses_covered_by=="Covered by us but reimbursed" :
+                counter[1] += 1
+                if expense.expense_reimbursed == True:
+                    counter[0] += 1
+
+        return counter
+
+
+
+    def is_archived(self):
+        if self.status == "review":
+            return False
+
+        elif self.organization_completed()==True and self.reimbursement_completed()==True and self.status == 'approved':
+            return True
+
+        elif self.status == 'rejected':
+            return True
+
+        return False
+
 
 
 
     class Meta:
-        ordering = ['-submission_date']
+        ordering = ['arrival_date']
+
 
 
 
@@ -136,6 +196,7 @@ class Expense (models.Model):
 
     def __str__(self):
         return dict(Expense.TYPE_CHOICES)[self.type]
+
 
 
 class Visitor(models.Model):
