@@ -66,6 +66,26 @@ class Request(models.Model):
     def get_status(self):
         return dict(Request.STATUS_CHOICES)[self.status]
 
+
+    def is_archived(self):
+
+        if self.status == 'rejected':
+            return True
+
+        elif self.status == 'review':
+            return False
+
+        for expense in self.expense_set.all():
+            if expense.organized_by_us==True and expense.is_organized==False:
+                return False
+
+            elif expense.expenses_covered_by=="Covered by us but reimbursed" and expense.expense_reimbursed == False:
+                return False
+
+        return True
+
+
+
     class Meta:
         ordering = ['-submission_date']
 
@@ -95,9 +115,6 @@ class Expense (models.Model):
     notes = models.TextField(max_length=225,verbose_name='Additional Notes', null=True, blank=True)
     request_form = models.ForeignKey(Request, verbose_name="Request", on_delete='CASCADE',)
     is_organized = models.BooleanField(default=False, verbose_name="Has been organized")
-    expense_paid = models.BooleanField(default=False, verbose_name="Expense has been paid")
-    marked_as_paid_by = models.ForeignKey(User, related_name="marked_as_paid_by", verbose_name="Marked as paid by",on_delete='SET_DEFAULT', default=None, null=True, blank=True )
-    marked_as_paid_on = models.DateField(verbose_name="Marked as paid on",null=True, blank=True)
     expense_reimbursed = models.BooleanField(default=False, verbose_name="Expense has been reimbursed")
     marked_as_reimbursed_by = models.ForeignKey(User, related_name="marked_as_reimbursed_by", verbose_name="Marked as reimbursed by",
                                           on_delete='SET_DEFAULT', default=None, null=True, blank=True)
@@ -108,12 +125,6 @@ class Expense (models.Model):
 
 
 
-    def is_outstanding(self):
-        if self.expenses_covered_by == 'Covered by us but reimbursed' or self.expenses_covered_by == 'Covered by us (not reimbursed)' \
-                and self.expense_paid == False:
-            return True
-        else:
-            return False
 
     def needs_to_be_organized(self):
         if self.organized_by_us == True and self.is_organized == False and self.request_form.is_approved == True:

@@ -216,11 +216,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pih_app/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="72" selection-start-line="72" selection-end-line="72" />
+            <state relative-caret-position="272">
+              <caret line="63" column="51" lean-forward="true" selection-start-line="63" selection-start-column="51" selection-end-line="63" selection-end-column="51" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -231,8 +231,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pih_app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="277" column="23" lean-forward="true" selection-start-line="277" selection-start-column="23" selection-end-line="277" selection-end-column="23" />
+            <state relative-caret-position="70">
+              <caret line="27" column="50" lean-forward="true" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="69" />
               <folding>
                 <element signature="e#0#63#0" expanded="true" />
               </folding>
@@ -255,8 +255,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/pih_app/reviewer-dashboard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-415">
-              <caret line="15" column="71" selection-start-line="15" selection-start-column="71" selection-end-line="15" selection-end-column="71" />
+            <state relative-caret-position="340">
+              <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+              <folding>
+                <element signature="e#146#190#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -313,11 +316,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/pih_app/reviewer/pending-review.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="30" selection-start-line="30" selection-end-line="30" />
+            <state>
+              <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
               <folding>
                 <element signature="e#147#171#0#HTML" expanded="true" />
                 <element signature="e#102#146#0#HTML" expanded="true" />
@@ -388,11 +391,9 @@
         <option value="$PROJECT_DIR$/templates/pih_app/submit-request-success.html" />
         <option value="$PROJECT_DIR$/templates/pih_app/personal-dashboard.html" />
         <option value="$PROJECT_DIR$/templates/pih_app/base.html" />
-        <option value="$PROJECT_DIR$/templates/pih_app/reviewer-dashboard.html" />
         <option value="$PROJECT_DIR$/accounts/models.py" />
         <option value="$PROJECT_DIR$/accounts/admin.py" />
         <option value="$PROJECT_DIR$/accounts/forms.py" />
-        <option value="$PROJECT_DIR$/pih_app/models.py" />
         <option value="$PROJECT_DIR$/pih_app/forms.py" />
         <option value="$PROJECT_DIR$/pih_app/urls.py" />
         <option value="$PROJECT_DIR$/templates/pih_app/modals/review-modal.html" />
@@ -401,6 +402,8 @@
         <option value="$PROJECT_DIR$/templates/pih_app/reviewer/review-form.html" />
         <option value="$PROJECT_DIR$/pih_app/views.py" />
         <option value="$PROJECT_DIR$/templates/pih_app/reviewer/pending-review.html" />
+        <option value="$PROJECT_DIR$/pih_app/models.py" />
+        <option value="$PROJECT_DIR$/templates/pih_app/reviewer-dashboard.html" />
       </list>
     </option>
   </component>
@@ -419,6 +422,20 @@
       <pane id="ProjectPane">
         <subPane>
           <expand>
+            <path>
+              <item name="PiHapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PiHapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PiHapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PiHapp" type="462c0819:PsiDirectoryNode" />
+              <item name="pih_app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PiHapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PiHapp" type="462c0819:PsiDirectoryNode" />
+              <item name="PiHapp" type="462c0819:PsiDirectoryNode" />
+            </path>
             <path>
               <item name="PiHapp" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
@@ -512,17 +529,18 @@
       <workItem from="1559661431252" duration="2734000" />
       <workItem from="1559849248148" duration="7682000" />
       <workItem from="1559898903347" duration="9000" />
-      <workItem from="1559934012585" duration="33353000" />
+      <workItem from="1559934012585" duration="36061000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96743000" />
+    <option name="totallyTimeSpent" value="99451000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21099435" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.02829426" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -536,7 +554,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32978722" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5012126" side_tool="true" weight="0.4113475" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4987874" visible="true" weight="0.25886524" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4987874" visible="true" weight="0.17375886" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -871,16 +889,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pih_app/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="72" selection-start-line="72" selection-end-line="72" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/pih_app/preview.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -920,13 +928,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/pih_app/reviewer-dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-415">
-          <caret line="15" column="71" selection-start-line="15" selection-start-column="71" selection-end-line="15" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/pih_app/reviewer/review-form.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -939,23 +940,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/pih_app/reviewer/pending-review.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
+          <folding>
+            <element signature="e#147#171#0#HTML" expanded="true" />
+            <element signature="e#102#146#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/pih_app/reviewer-dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+          <folding>
+            <element signature="e#146#190#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pih_app/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="277" column="23" lean-forward="true" selection-start-line="277" selection-start-column="23" selection-end-line="277" selection-end-column="23" />
+        <state relative-caret-position="70">
+          <caret line="27" column="50" lean-forward="true" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="69" />
           <folding>
             <element signature="e#0#63#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/pih_app/reviewer/pending-review.html">
+    <entry file="file://$PROJECT_DIR$/pih_app/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        <state relative-caret-position="272">
+          <caret line="63" column="51" lean-forward="true" selection-start-line="63" selection-start-column="51" selection-end-line="63" selection-end-column="51" />
           <folding>
-            <element signature="e#147#171#0#HTML" expanded="true" />
-            <element signature="e#102#146#0#HTML" expanded="true" />
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
