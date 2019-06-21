@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'pih_app',
+    'django.contrib.humanize'
 ]
 
 MIDDLEWARE = [

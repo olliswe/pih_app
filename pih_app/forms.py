@@ -38,3 +38,12 @@ class ReviewForm(forms.ModelForm):
         model = Request
 
         fields = ['status','review_comment']
+
+
+class ReimbursementForm(forms.ModelForm):
+
+    class Meta:
+
+        model = Expense
+
+        fields = ['amount_reimbursed']

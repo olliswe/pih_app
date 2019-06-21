@@ -1,0 +1,120 @@
+{% extends "pih_app/base.html" %}
+{% load staticfiles %}
+{% load humanize %}
+
+{% block content %}
+
+{% if alert %}
+ <div class="alert alert-{{ alert_type }} alert-dismissible fade show" role="alert">
+          <strong>{{ alert }}</strong>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+</div>
+{% endif %}
+
+<div class="container">
+    <a class="btn btn-secondary" href = "{% url 'pih_app:reviewer_dashboard' %}" style="margin-top: 10px">Return</a>
+    <div class="row justify-content-center" >
+        <h3>Review Request ID: {{ r.id }}</h3>
+    </div>
+
+<div class="card text-white bg-info" style="margin-top:20px;margin-bottom: 20px">
+<div class="card-header">
+    <strong>Request Info</strong>
+</div>
+<div class="card-body">
+    <strong>Approval Status: </strong> {{ r.get_status }}
+    &nbsp;&nbsp;&nbsp;
+    {% if r.status == "approved" %}
+     Approved by {{ r.reviewer }} on {{ r.review_date }}
+     <br><br>
+    <strong>Review Comment: </strong> {{ r.review_comment }}
+    &nbsp;&nbsp;&nbsp;
+     <br><br>
+    <strong>Organization Status</strong>
+    {{ r.get_organized_counter.0 }} out of {{ r.get_organized_counter.1 }} items organized
+    &nbsp;&nbsp;&nbsp;
+    {% if r.organization_status == "completed" %}
+    <strong>Reimbursement Status</strong>
+    {{ r.get_reimbursement_counter.0 }} out of {{ r.get_reimbursement_counter.1 }} items reimbursed
+    {% endif %}
+    {% elif r.status == "rejected" %}
+     Rejected by {{ r.reviewer }} on {{ r.review_date }}
+     <br><br>
+    <strong>Review Comment: </strong> {{ r.review_comment }}
+    {% endif %}
+<div class=""></div>
+</div>
+</div>
+
+
+<div class="card" style="margin-bottom:30px">
+<div class="card-header">
+    <strong>Request submitted on {{ r.submission_date }} by {{ r.host }}</strong>
+</div>
+<div class="card-body" style="margin-left: 50px">
+    <div class="row" style="margin-bottom: 10px">
+        <strong>Number of visitors: &nbsp;</strong> {{ r.num_visitors }} &nbsp; &nbsp;
+    {% if r.other_place %}
+        <strong>Departure Place:&nbsp;</strong> {{ r.other_place }}
+    {% else %}
+        <strong>Departure Place:&nbsp;</strong> {{ r.departure_place}}
+    {% endif %}
+    </div>
+
+    <div class="row" style="margin-bottom: 10px">
+        <strong>Purpose of visit:</strong>
+    </div>
+    <div class="row" style="margin-bottom: 10px">{{ r.purpose }}</div>
+    <div class="row" style="margin-bottom: 10px">
+        <strong>Arrival date : &nbsp;</strong> {{ r.arrival_date }}
+    </div>
+    <div class="row" style="margin-bottom: 10px">
+        <strong>Departure date (estimated) : </strong> &nbsp;{{ r.departure_date }}
+    </div>
+    <div class="row"><strong>Visitors:</strong></div>
+    {% for visitor in r.visitor_set.all %}
+        <div class="row" style="margin-left: 20px">{{ visitor.name }}</div>
+    {% endfor %}
+
+
+{% for expense in r.expense_set.all %}
+
+    {% include "pih_app/expenses/expense-review-card.html" with expense=expense r=r %}
+
+{% endfor %}
+
+{% if r.status == "review" and request.user.reviewer %}
+{% if r.host == request.user %}
+    <div class="alert-danger" style="text-align: center">
+        You are unable to approve this Request, since it was submitted by yourself<br>
+        Please ask another Reviewer to approve it
+    </div>
+{% else %}
+<div class="row justify-content-around">
+    <button class="btn btn-success" data-toggle="modal" data-target="#approval-modal">Approve Request</button>
+    <button class="btn btn-danger"  data-toggle="modal" data-target="#rejection-modal">Reject Request</button>
+</div>
+
+
+{% include "pih_app/modals/approve-modal.html" %}
+{% include "pih_app/modals/reject-modal.html" %}
+{% endif %}
+{% endif %}
+
+</div>
+
+
+</div>
+</div>
+
+
+
+
+
+{% endblock %}
+
+{% block customjs %}
+
+{% endblock %}

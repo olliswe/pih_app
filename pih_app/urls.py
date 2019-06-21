@@ -18,9 +18,9 @@ urlpatterns = [
     path("submit-request/preview",views.preview_submission, name="preview_submission"),
     path("submit-request/success/<int:form_id>",views.submit_request_success, name="submit_request_success"),
     path("personal-dashboard/",views.personal_dashboard, name="personal_dashboard"),
-    path("get-requests-json/",views.get_requests_json, name="get_requests_json"),
-    path("reviewer-dashboard/pending-review",views.pending_review, name="pending_review"),
-    path("reviewer-dashboard/pending-review/<str:alert>/<int:id>",views.pending_review, name="pending_review_alert"),
-    path("reviewer-dashboard/review/<int:id>",views.review_request, name="review_request")
+    path("review/<int:id>",views.review_request, name="review_request"),
+    path("review/<int:id>/<str:alert>/<str:alert_type>",views.review_request, name="review_request_alert"),
+    path("expense-organized/<int:expense_id>",views.expense_organized, name="expense_organized"),
+    path("expense-reimbursed/<int:expense_id>",views.expense_reimbursed, name="expense_reimbursed")
 ]
 

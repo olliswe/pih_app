@@ -21,7 +21,7 @@
 
 
 <!-- custom CSS-->
-
+        <link rel="stylesheet" href="{% static "css/dashboard-table.css" %}"/>
 
 
 
@@ -55,7 +55,7 @@
         <a class="nav-link" href="{% url "pih_app:submit_request" %}">Submit New Request</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Search</a>
+        <a class="nav-link" href="#">Archive</a>
       </li>
 
       <li class="nav-item dropdown">
@@ -90,6 +90,11 @@
 
 {% block customjs %}
 {% endblock %}
+<script>
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
 
 </body>
 </html>

@@ -5,7 +5,7 @@ from django.http import HttpResponseRedirect, JsonResponse
 from django.urls import reverse
 from accounts.decorators import reviewer_required
 from django.forms import formset_factory
-from .forms import RequestForm, VisitorForm, ExpenseForm, ReviewForm
+from .forms import RequestForm, VisitorForm, ExpenseForm, ReviewForm, ReimbursementForm
 from .models import *
 from django.utils.timesince import timesince
 from django.utils import timezone
@@ -25,16 +25,15 @@ def index(request):
 @login_required
 @reviewer_required
 def reviewer_dashboard(request):
-    requests_under_review = Request.objects.filter(status = 'review').exclude(host = request.user )
-    approved_requests = Request.objects.filter(status = 'approved')
-    outstanding_expenses = Expense.manager.outstanding()
-    expenses_need_reimbursement = Expense.manager.need_reimbursement()
+    r = []
 
-    return render(request,"pih_app/reviewer-dashboard.html",{"requests_under_review":requests_under_review,
-                                                             "approved_requests":approved_requests,
-                                                             "outstanding_expenses":outstanding_expenses,
-                                                             "expenses_need_reimbursement":expenses_need_reimbursement
-                                                             })
+    for request_form in Request.objects.all():
+        if request_form.is_archived() == False:
+            r.append(request_form)
+
+    return render(request,"pih_app/reviewer-dashboard.html",{'requests':r})
+
+
 
 @login_required
 def personal_dashboard(request):
@@ -105,6 +104,7 @@ def add_flight_expenses(request,):
     else:
         form = ExpenseForm()
     return render(request, 'pih_app/expenses/flights.html', {'form': form})
+
 
 @login_required
 def add_visa_expenses(request,):
@@ -256,16 +256,12 @@ def submit_request_success(request, form_id):
     return render(request, "pih_app/submit-request-success.html",{'request_form':request_form})
 
 
-@login_required
-@reviewer_required
-def pending_review(request, alert=None, id=None):
-    return render(request, "pih_app/reviewer/pending-review.html",{"alert":alert,"id":id})
+
 
 
 
 @login_required
-@reviewer_required
-def review_request(request, id):
+def review_request(request, id, alert=None, alert_type = None):
     request_form = get_object_or_404(Request, id=id)
 
     if request.method == 'POST':
@@ -278,51 +274,65 @@ def review_request(request, id):
             data.save()
             if form.cleaned_data['status']=='approved':
                 id = request_form.id
-                return HttpResponseRedirect(reverse("pih_app:pending_review_alert",kwargs={"alert":'approved',"id":id}))
+                alert = "Request was successfully approved"
+                alert_type = "success"
+                return HttpResponseRedirect(reverse("pih_app:review_request_alert",kwargs={"alert":alert,
+                                                                                     'alert_type':alert_type,
+                                                                                     "id":id}))
             else:
                 id = request_form.id
-                return HttpResponseRedirect(reverse("pih_app:pending_review_alert", kwargs={"alert": 'rejected', "id": id}))
+                alert = "Request was successfully rejected"
+                alert_type = "danger"
+                return HttpResponseRedirect(reverse("pih_app:review_request_alert", kwargs={"alert": alert,
+                                                                                      "alert_type":alert_type,
+                                                                                      "id": id}))
 
     else:
         form = ReviewForm(instance = request_form)
 
-    return render(request,"pih_app/reviewer/review-form.html",{"form":form, "r":request_form})
+    return render(request, "pih_app/review-form.html", {"form":form, "r":request_form, "alert":alert, "alert_type":alert_type})
+
 
 
 @login_required
-def get_requests_json(request):
-    if request.GET.get('type')=='awaiting review':
-        requests = Request.objects.filter(status = 'review').exclude(host = request.user)
-    elif request.GET.get('type')=='approved':
-        requests = Request.objects.filter(status='approved')
+def expense_organized(request, expense_id):
+    expense = get_object_or_404(Expense, id=expense_id)
+    request_form_id = expense.request_form.id
+    expense.is_organized = True
+    expense.marked_as_organized_by = request.user
+    expense.marked_as_organized_on = timezone.now()
+    expense.save()
+    alert = expense.__str__() + ' expense was successfully marked as organized'
+    alert_type = 'success'
+    return HttpResponseRedirect(reverse("pih_app:review_request_alert",kwargs={"id":request_form_id,
+                                                                               "alert":alert,
+                                                                               "alert_type":alert_type
+                                                                               }))
+
+
+
+@login_required
+def expense_reimbursed(request, expense_id):
+    expense = get_object_or_404(Expense, id=expense_id)
+    request_form_id = expense.request_form_id
+
+    if request.method == 'POST':
+        form = ReimbursementForm(request.POST)
+
+        if form.is_valid():
+            expense.amount_reimbursed = form.cleaned_data['amount_reimbursed']
+            expense.expense_reimbursed = True
+            expense.marked_as_reimbursed_by = request.user
+            expense.marked_as_reimbursed_on = timezone.now()
+            expense.save()
+            alert = expense.__str__() + ' expense was successfully marked as reimbursed'
+            alert_type = 'success'
+            return HttpResponseRedirect(reverse("pih_app:review_request_alert", kwargs={"id": request_form_id,
+                                                                                "alert": alert,
+                                                                                "alert_type": alert_type
+                                                                                }))
     else:
-        requests = Request.objects.all()
-    requests_json = []
-    for request_form in requests:
-        visitors = ''
-        count = 1
-        for visitor in request_form.visitor_set.all():
-            if count > 3:
-                visitors += ', +'+str(request_form.num_visitors-(count-1)) +" more"
-                break
-            elif count==1:
-                visitors += visitor.name
-                count += 1
-            else:
-                visitors += ', '+visitor.name
-                count += 1
-
-        requests_json.append(
-            {
-                'ID':request_form.id,
-                'Submission Date':str(timesince(request_form.submission_date)).split(",")[0]+' ago',
-                'Status':request_form.status,
-                'Host':request_form.host.__str__(),
-                '# of Visitors':request_form.num_visitors,
-                'Visitor Name(s)': visitors,
-                'Arrival Date':request_form.arrival_date.strftime("%d %B %Y"),
-                'Departure Date':request_form.departure_date.strftime("%d %B %Y")
-            }
-        )
-
-    return JsonResponse(requests_json, safe=False)
+        return HttpResponseRedirect(reverse("pih_app:review_request_alert", kwargs={"id": request_form_id,
+                                                                                    "alert": 'Sorry an error occured, please try again! ',
+                                                                                    "alert_type": 'danger'
+                                                                                    }))

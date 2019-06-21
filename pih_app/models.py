@@ -65,34 +65,8 @@ class Request(models.Model):
 
     def get_status(self):
         return dict(Request.STATUS_CHOICES)[self.status]
-    #
-    #
-    # def is_archived(self):
-    #
-    #     if self.status == 'rejected':
-    #         return True
-    #
-    #     elif self.status == 'review':
-    #         return False
-    #
-    #     for expense in self.expense_set.all():
-    #         if expense.organized_by_us==True and expense.is_organized==False:
-    #             return False
-    #
-    #         elif expense.expenses_covered_by=="Covered by us but reimbursed" and expense.expense_reimbursed == False:
-    #             return False
-    #
-    #     return True
 
 
-    def organization_completed(self):
-        completed = True
-
-        for expense in self.expense_set.all():
-            if expense.organized_by_us==True and expense.is_organized==False:
-                completed = False
-
-        return completed
 
 
     def get_organized_counter(self):
@@ -101,20 +75,25 @@ class Request(models.Model):
         for expense in self.expense_set.all():
             if expense.organized_by_us == True :
                 counter[1] += 1
-                if expense.is_organized == False:
+                if expense.is_organized == True:
                     counter[0] += 1
 
         return counter
 
 
-    def reimbursement_completed(self):
-        completed = True
+    def organization_status(self):
+        counter = self.get_organized_counter()
+        if counter[0]==counter[1]:
+            return 'completed'
 
-        for expense in self.expense_set.all():
-            if expense.expenses_covered_by == "Covered by us but reimbursed" and expense.expense_reimbursed == False:
-                completed = False
+        elif counter[0]!=0:
+            return 'partial'
 
-        return completed
+        else:
+            return 'not_completed'
+
+
+
 
 
     def get_reimbursement_counter(self):
@@ -130,11 +109,24 @@ class Request(models.Model):
 
 
 
+    def reimbursement_status(self):
+        counter = self.get_reimbursement_counter()
+        if counter[0] == counter[1]:
+            return 'completed'
+
+        elif counter[0] != 0:
+            return 'partial'
+
+        else:
+            return 'not_completed'
+
+
+
     def is_archived(self):
         if self.status == "review":
             return False
 
-        elif self.organization_completed()==True and self.reimbursement_completed()==True and self.status == 'approved':
+        elif self.organization_status()=='completed' and self.reimbursement_status()=='completed' and self.status == 'approved':
             return True
 
         elif self.status == 'rejected':
@@ -143,7 +135,20 @@ class Request(models.Model):
         return False
 
 
-
+    def print_names_of_visitors(self):
+        visitors = ''
+        count = 1
+        for visitor in self.visitor_set.all():
+            if count > 3:
+                visitors += ', +' + str(self.num_visitors - (count - 1)) + " more"
+                break
+            elif count == 1:
+                visitors += visitor.name
+                count += 1
+            else:
+                visitors += ', ' + visitor.name
+                count += 1
+        return visitors
 
     class Meta:
         ordering = ['arrival_date']
@@ -171,14 +176,20 @@ class Expense (models.Model):
                                           default=None, null=True, blank=True, verbose_name="Name of Organizer")
     expenses_covered_by = models.CharField(max_length=225, choices = EXPENSES_CHOICES,
                                            verbose_name="Expenses covered by")
-    expenses_amount = models.IntegerField(verbose_name="Estimated expenses amount in USD", null=True, blank='True')
+    expenses_amount = models.FloatField(verbose_name="Estimated expenses amount in USD", null=True, blank='True')
     notes = models.TextField(max_length=225,verbose_name='Additional Notes', null=True, blank=True)
     request_form = models.ForeignKey(Request, verbose_name="Request", on_delete='CASCADE',)
+
     is_organized = models.BooleanField(default=False, verbose_name="Has been organized")
+    marked_as_organized_by = models.ForeignKey(User, related_name="marked_as_organized_by", verbose_name="Marked as organized by",
+                                          on_delete='SET_DEFAULT', default=None, null=True, blank=True)
+    marked_as_organized_on = models.DateField(verbose_name="Marked as organized on", null=True, blank=True)
+
     expense_reimbursed = models.BooleanField(default=False, verbose_name="Expense has been reimbursed")
     marked_as_reimbursed_by = models.ForeignKey(User, related_name="marked_as_reimbursed_by", verbose_name="Marked as reimbursed by",
                                           on_delete='SET_DEFAULT', default=None, null=True, blank=True)
     marked_as_reimbursed_on = models.DateField(verbose_name="Marked as reimbursed on", null=True, blank=True)
+    amount_reimbursed = models.FloatField(verbose_name="Amount reimbursed", default=None, null=True, blank=True)
 
     objects = models.Manager()
     manager = ExpenseManager()

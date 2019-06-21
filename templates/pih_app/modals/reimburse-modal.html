@@ -1,0 +1,27 @@
+<div class="modal" tabindex="-1" role="dialog" id="reimburse-modal-{{ expense.id }}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Mark {{ expense }} as reimbursed</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+
+      <form action="{% url "pih_app:expense_reimbursed" expense_id=expense.id %}" method="post">
+          {% csrf_token %}
+          <div class="modal-body">
+              <label for="id_amount_reimbursed">Reimbursed amount (in USD): </label>
+              <input type="number" id="id_amount_reimbursed" name="amount_reimbursed">
+          </div>
+          <div class="modal-footer">
+            <input type="submit" class="btn btn-success" value="Submit">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+      </form>
+
+
+    </div>
+  </div>
+</div>

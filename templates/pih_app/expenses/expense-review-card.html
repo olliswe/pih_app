@@ -1,0 +1,113 @@
+{% load staticfiles %}
+{% load humanize %}
+
+<div class="card" style="margin-top:20px;margin-bottom: 20px">
+    <div class="card-header"><strong>{{ expense.type }}</strong>
+    &nbsp;
+    {% if expense.type == 'Flights' %}
+        <i class="fas fa-plane"></i>
+    {% elif expense.type == 'Visa' %}
+        <i class="fas fa-book"></i>
+    {% elif expense.type == 'Transport' %}
+        <i class="fas fa-car"></i>
+    {% elif expense.type == 'Accommodation' %}
+        <i class="fas fa-building"></i>
+    {% elif expense.type == 'Seacoach' %}
+        <i class="fas fa-ship"></i>
+    {% endif %}
+    &nbsp;&nbsp;
+    {% if r.status == "approved" and expense.organized_by_us%}
+            {% if expense.is_organized == False %}
+                <img src="{% static 'images/not_organized.svg'%}" alt="" style="height:40px">
+            {% else %}
+                <img src="{% static 'images/organized.svg'%}" alt="" style="height:40px">
+            {% endif %}
+    {% endif %}
+    {% if r.status == "approved" and expense.expenses_covered_by == "Covered by us but reimbursed" %}
+        {% if expense.expense_reimbursed == False %}
+            <img src="{% static 'images/not_reimbursed.svg'%}" alt="" style="height:40px">
+        {% else %}
+            <img src="{% static 'images/reimbursed.svg'%}" alt="" style="height:40px">
+        {% endif %}
+    {% endif %}
+
+
+    </div>
+    <div class="card-body">
+    <div class="row" style="margin-bottom:10px">
+        <div class="col-md-4">
+            <strong>Organised by us:</strong> {% if expense.organized_by_us %}Yes{% else %}No{% endif %}
+        </div>
+        {% if expense.organized_by_us %}
+        <strong>Name of Organizer</strong>
+        <div class="col-md-4">{{expense.name_of_organizer}}</div>
+        {% endif %}
+    </div>
+    <div class="row" style="margin-bottom: 10px">
+        <div class="col-md-6" >
+            <strong>Expenses covered by: </strong> {{ expense.expenses_covered_by }}
+        </div>
+        {% if expense.expenses_amount %}
+         <div class="col-md-6">
+            <strong>Expense amount: </strong>{{ expense.expenses_amount | intcomma }} USD
+         </div>
+        {% endif %}
+    </div>
+    <div class="row" style="margin-bottom:10px">
+        <div class="col-md-10">
+            <strong>Additional Notes:</strong> {{ expense.notes | linebreaks }}
+        </div>
+    </div>
+
+            {% if r.status == "approved" and expense.organized_by_us%}
+            {% if expense.is_organized == False %}
+            {% if request.user.reviewer or expense.name_of_organizer == request.user %}
+             <div class="row justify-content-center" style="margin-bottom: 10px">
+                <a href="{% url "pih_app:expense_organized" expense_id=expense.id %}" class="btn btn-primary"
+                 onclick="return confirm('Are you sure that you want to mark {{ expense }} as organized?')">
+                    Mark {{ expense }} as organized</a>
+             </div>
+             {% endif %}
+            {% else %}
+            <div class="row" style="margin-bottom:10px">
+                <div class="col-md-10">
+                    <span class="bg-success">&nbsp;Marked as organized by {{ expense.marked_as_organized_by }} on {{ expense.marked_as_organized_on }}&nbsp;</span>
+                </div>
+            </div>
+            {% endif %}
+            {% endif %}
+
+            {% if r.status == "approved" and expense.is_organized == True and expense.expenses_covered_by == "Covered by us but reimbursed" and r.organization_status == "completed"%}
+            {% if expense.expense_reimbursed == False %}
+            {% if request.user.reviewer or expense.name_of_organizer == request.user %}
+             <div class="row justify-content-center" style="margin-bottom: 10px">
+                <button data-toggle="modal" data-target="#reimburse-modal-{{ expense.id }}" class="btn btn-success">
+                    Mark {{ expense }} expense as reimbursed</button>
+             </div>
+            {% endif %}
+            {% else %}
+            <div class="row" style="margin-bottom:10px">
+                <div class="col-md-10">
+                    <span class="bg-success">&nbsp;Marked as reimbursed by {{ expense.marked_as_reimbursed_by }} on {{ expense.marked_as_reimbursed_on }}&nbsp;</span>
+                </div>
+            </div>
+            <div class="row" style="margin-bottom:10px">
+                <div class="col-md-10">
+                    <span class="bg-success">&nbsp;<strong>Amount reimbursed: </strong>{{ expense.amount_reimbursed }}&nbsp;USD</span>
+                </div>
+            </div>
+            {% endif %}
+            {% endif %}
+
+
+    </div>
+
+    </div>
+
+{% if r.status == "approved" and expense.is_organized == True and expense.expenses_covered_by == "Covered by us but reimbursed" and r.organization_status == "completed"%}
+{% if expense.expense_reimbursed == False %}
+{% if request.user.reviewer or expense.name_of_organizer == request.user %}
+{% include "pih_app/modals/reimburse-modal.html" with expense=expense%}
+{% endif %}
+{% endif %}
+{% endif %}

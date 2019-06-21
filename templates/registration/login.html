@@ -13,6 +13,9 @@
     <!-- Bootstrap core CSS -->
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+{#      FONTAWESOME#}
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -47,7 +50,7 @@
   <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" id="id_password" class="form-control" name="password" placeholder="Password" required>
   <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-    <p class="mt-5 mb-3 text-muted">&copy; 2019</p>
+    <p class="mt-5 mb-3 text-muted">Made with <i class="fas fa-heart"></i> in Salone</p>
      {% if form.errors %}
           <p>Your email and password didn't match. Please try again.</p>
       {% endif %}
