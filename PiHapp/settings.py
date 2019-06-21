@@ -90,7 +90,9 @@ DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
             'NAME': 'pih_app',
-            'USER': 'root',
+            # 'USER': 'root',
+            # 'PASSWORD': '',
+            'USER': 'oliver',
             'PASSWORD': '',
             'HOST': 'localhost',
             'PORT': '3306',

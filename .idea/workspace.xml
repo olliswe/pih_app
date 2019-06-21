@@ -2,29 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="613c0afc-2aad-4825-97af-7623ace3d2c6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/pih_app/expenses/expense-review-card.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/pih_app/modals/reimburse-modal.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/pih_app/personal-dashboard/approved.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/pih_app/personal-dashboard/items-need-organizing.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/pih_app/personal-dashboard/rejected.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/pih_app/personal-dashboard/under-review.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/PiHapp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PiHapp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PiHapp/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/PiHapp/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/migrations/0002_remove_user_submitter.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pih_app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/pih_app/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pih_app/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pih_app/migrations/0002_auto_20190610_0909.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pih_app/migrations/0003_auto_20190610_0920.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pih_app/migrations/0004_auto_20190611_1004.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pih_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/pih_app/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pih_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/pih_app/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pih_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/pih_app/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pih_app/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pih_app/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pih_app/reviewer-dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pih_app/reviewer-dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pih_app/reviewer/pending-review.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pih_app/reviewer/review-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pih_app/review-form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/whitenoise-4.1.2.dist-info/INSTALLER" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/whitenoise-4.1.2.dist-info/METADATA" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/whitenoise-4.1.2.dist-info/RECORD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/whitenoise-4.1.2.dist-info/WHEEL" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/whitenoise-4.1.2.dist-info/top_level.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/whitenoise/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/whitenoise/base.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/whitenoise/compress.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/whitenoise/django.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/whitenoise/httpstatus_backport.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/whitenoise/media_types.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/whitenoise/middleware.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/whitenoise/responders.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/whitenoise/runserver_nostatic/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/whitenoise/runserver_nostatic/management/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/whitenoise/runserver_nostatic/management/commands/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/whitenoise/runserver_nostatic/management/commands/runserver.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/whitenoise/scantree.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/whitenoise/storage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/whitenoise/string_utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/Activate.ps1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/activate" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/activate.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/deactivate.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/python.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/pythonw.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/pyvenv.cfg" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,37 +47,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/pih_app/personal-dashboard/approved.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/pih_app/reviewer-dashboard.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="408">
-              <caret line="50" column="15" lean-forward="true" selection-start-line="50" selection-start-column="15" selection-end-line="50" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/pih_app/review-form.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1615">
-              <caret line="95" column="36" selection-start-line="95" selection-start-column="36" selection-end-line="95" selection-end-column="85" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/pih_app/modals/approve-modal.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" column="16" selection-end-line="33" selection-end-column="6" />
+              <caret line="50" column="15" selection-start-line="50" selection-start-column="15" selection-end-line="50" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -85,7 +67,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/pih_app/modals/reimburse-modal.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
+            <state relative-caret-position="300">
               <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
             </state>
           </provider>
@@ -94,7 +76,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/pih_app/expenses/expense-review-card.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
+            <state relative-caret-position="1425">
               <caret line="95" column="127" selection-start-line="95" selection-start-column="127" selection-end-line="95" selection-end-column="127" />
             </state>
           </provider>
@@ -103,7 +85,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pih_app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="53">
+            <state relative-caret-position="285">
               <caret line="19" column="51" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="51" />
               <folding>
                 <element signature="e#0#63#0" expanded="true" />
@@ -113,9 +95,39 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="5" selection-start-column="5" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/PiHapp/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-940">
+              <caret line="99" column="1" lean-forward="true" selection-start-line="99" selection-start-column="1" selection-end-line="99" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pih_app/admin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pih_app/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
+            <state relative-caret-position="660">
               <caret line="45" selection-start-line="45" selection-end-line="45" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
@@ -127,7 +139,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pih_app/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3026">
+            <state relative-caret-position="2640">
               <caret line="178" column="34" selection-start-line="178" selection-start-column="34" selection-end-line="178" selection-end-column="34" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
@@ -175,8 +187,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/users/forms.py" />
-        <option value="$PROJECT_DIR$/accounts/views.py" />
         <option value="$PROJECT_DIR$/accounts/decorators.py" />
         <option value="$PROJECT_DIR$/PiHapp/urls.py" />
         <option value="$PROJECT_DIR$/templates/registration/change_password_success.html" />
@@ -220,12 +230,14 @@
         <option value="$PROJECT_DIR$/templates/pih_app/rejected.html" />
         <option value="$PROJECT_DIR$/templates/pih_app/approved.html" />
         <option value="$PROJECT_DIR$/pih_app/models.py" />
-        <option value="$PROJECT_DIR$/PiHapp/settings.py" />
         <option value="$PROJECT_DIR$/templates/pih_app/review-form.html" />
         <option value="$PROJECT_DIR$/pih_app/forms.py" />
         <option value="$PROJECT_DIR$/pih_app/views.py" />
         <option value="$PROJECT_DIR$/templates/pih_app/modals/reimburse-modal.html" />
         <option value="$PROJECT_DIR$/templates/pih_app/expenses/expense-review-card.html" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/PiHapp/settings.py" />
       </list>
     </option>
   </component>
@@ -245,86 +257,23 @@
         <subPane>
           <expand>
             <path>
-              <item name="PiHapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PiHapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PiHapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PiHapp" type="462c0819:PsiDirectoryNode" />
-              <item name="accounts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PiHapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PiHapp" type="462c0819:PsiDirectoryNode" />
-              <item name="accounts" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PiHapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PiHapp" type="462c0819:PsiDirectoryNode" />
+              <item name="pih_app" type="b2602c69:ProjectViewProjectNode" />
               <item name="pih_app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="PiHapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PiHapp" type="462c0819:PsiDirectoryNode" />
+              <item name="pih_app" type="b2602c69:ProjectViewProjectNode" />
               <item name="pih_app" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PiHapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PiHapp" type="462c0819:PsiDirectoryNode" />
-              <item name="PiHapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PiHapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PiHapp" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PiHapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PiHapp" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PiHapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PiHapp" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PiHapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PiHapp" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="pih_app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="PiHapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PiHapp" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="pih_app" type="b2602c69:ProjectViewProjectNode" />
               <item name="pih_app" type="462c0819:PsiDirectoryNode" />
-              <item name="expenses" type="462c0819:PsiDirectoryNode" />
+              <item name="PiHapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="PiHapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PiHapp" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="pih_app" type="b2602c69:ProjectViewProjectNode" />
               <item name="pih_app" type="462c0819:PsiDirectoryNode" />
-              <item name="modals" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PiHapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PiHapp" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="registration" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PiHapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="PiHapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 3.7 (PiHapp) &gt;" type="70bed36:NamedLibraryElementNode" />
             </path>
           </expand>
           <select />
@@ -337,11 +286,11 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/static" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -428,17 +377,18 @@
       <workItem from="1560849993527" duration="123000" />
       <workItem from="1560925415733" duration="5075000" />
       <workItem from="1561122608071" duration="2109000" />
+      <workItem from="1561153153503" duration="2375000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130288000" />
+    <option name="totallyTimeSpent" value="132663000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25464836" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.257886" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -452,7 +402,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32978722" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.502021" side_tool="true" weight="0.45921987" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.497979" visible="true" weight="0.05319149" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.497979" visible="true" weight="0.37149027" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -488,16 +438,8 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/pih_app/flights_expense.html" />
-    <entry file="file://$PROJECT_DIR$/templates/pih_app/add-expenses.html" />
     <entry file="file://$PROJECT_DIR$/templates/pih_app/expenses/accomodation.html" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="16" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.py" />
     <entry file="file://$PROJECT_DIR$/accounts/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -592,13 +534,7 @@
     <entry file="file://$PROJECT_DIR$/static/DataTables/Select-1.3.0/js/select.jqueryui.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python37/site-packages/django/forms/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1262">
-          <caret line="265" selection-start-line="265" selection-end-line="265" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python37/site-packages/django/forms/models.py" />
     <entry file="file://$PROJECT_DIR$/accounts/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -642,13 +578,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python37/site-packages/django/db/models/deletion.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="223" selection-start-line="223" selection-end-line="223" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python37/site-packages/django/db/models/deletion.py" />
     <entry file="file://$PROJECT_DIR$/templates/pih_app/expenses/expenses-card.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-68">
@@ -693,16 +623,6 @@
           <caret line="27" selection-start-line="27" selection-end-line="28" selection-end-column="80" />
           <folding>
             <element signature="e#630#662#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pih_app/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -763,13 +683,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PiHapp/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="50" column="28" selection-start-line="50" selection-start-column="28" selection-end-line="50" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/pih_app/personal-dashboard/rejected.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -779,21 +692,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/pih_app/personal-dashboard/approved.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
+        <state relative-caret-position="120">
           <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/pih_app/review-form.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1615">
+        <state relative-caret-position="1425">
           <caret line="95" column="36" selection-start-line="95" selection-start-column="36" selection-end-line="95" selection-end-column="85" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/pih_app/modals/approve-modal.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
+        <state relative-caret-position="405">
           <caret line="27" column="16" selection-end-line="33" selection-end-column="6" />
         </state>
       </provider>
@@ -807,14 +720,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/pih_app/modals/reimburse-modal.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
+        <state relative-caret-position="300">
           <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/pih_app/expenses/expense-review-card.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1425">
+          <caret line="95" column="127" selection-start-line="95" selection-start-column="127" selection-end-line="95" selection-end-column="127" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pih_app/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
+        <state relative-caret-position="660">
           <caret line="45" selection-start-line="45" selection-end-line="45" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
@@ -824,7 +744,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pih_app/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3026">
+        <state relative-caret-position="2640">
           <caret line="178" column="34" selection-start-line="178" selection-start-column="34" selection-end-line="178" selection-end-column="34" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
@@ -832,16 +752,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/pih_app/expenses/expense-review-card.html">
+    <entry file="file://$PROJECT_DIR$/templates/pih_app/reviewer-dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="95" column="127" selection-start-line="95" selection-start-column="127" selection-end-line="95" selection-end-column="127" />
+        <state relative-caret-position="408">
+          <caret line="50" column="15" selection-start-line="50" selection-start-column="15" selection-end-line="50" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="632">
+          <caret line="72" selection-start-line="72" selection-end-line="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pih_app/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pih_app/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
+        <state relative-caret-position="285">
           <caret line="19" column="51" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="51" />
           <folding>
             <element signature="e#0#63#0" expanded="true" />
@@ -849,10 +786,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/pih_app/reviewer-dashboard.html">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="50" column="15" lean-forward="true" selection-start-line="50" selection-start-column="15" selection-end-line="50" selection-end-column="15" />
+        <state>
+          <caret column="5" selection-start-column="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PiHapp/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-940">
+          <caret line="99" column="1" lean-forward="true" selection-start-line="99" selection-start-column="1" selection-end-line="99" selection-end-column="1" />
         </state>
       </provider>
     </entry>
