@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="613c0afc-2aad-4825-97af-7623ace3d2c6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pih_app/templatetags/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pih_app/templatetags/tags.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/pih_app/view-approved-requests.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pih_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/pih_app/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pih_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/pih_app/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/expense.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/expense.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pih_app/add-visitors.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pih_app/add-visitors.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/pih_app/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pih_app/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/pih_app/expenses/accommodation.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pih_app/expenses/accommodation.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/pih_app/expenses/flights.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pih_app/expenses/flights.html" afterDir="false" />
@@ -17,8 +17,9 @@
       <change beforePath="$PROJECT_DIR$/templates/pih_app/expenses/transport.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pih_app/expenses/transport.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/pih_app/expenses/visa.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pih_app/expenses/visa.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/pih_app/personal-dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pih_app/personal-dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pih_app/review-request.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pih_app/review-request.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pih_app/reviewer-dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pih_app/reviewer-dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pih_app/review-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pih_app/review-form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pih_app/review-request.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pih_app/view-pending-requests.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pih_app/view-pending-requests.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,8 +38,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pih_app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="378" column="9" lean-forward="true" selection-start-line="378" selection-start-column="9" selection-end-line="378" selection-end-column="9" />
+            <state relative-caret-position="497">
+              <caret line="390" column="49" selection-start-line="390" selection-start-column="49" selection-end-line="390" selection-end-column="49" />
               <folding>
                 <element signature="e#0#64#0" expanded="true" />
               </folding>
@@ -47,26 +48,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/pih_app/view-pending-requests.html">
+        <entry file="file://$PROJECT_DIR$/templates/pih_app/view-approved-requests.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="63" selection-start-line="9" selection-start-column="63" selection-end-line="9" selection-end-column="63" />
+            <state relative-caret-position="180">
+              <caret line="22" column="43" lean-forward="true" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
               <folding>
-                <element signature="e#169#188#0#HTML" expanded="true" />
-                <element signature="e#236#263#0#HTML" expanded="true" />
-                <element signature="e#301#321#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pih_app/templatetags/tags.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-              <folding>
-                <element signature="e#0#27#0" expanded="true" />
+                <element signature="e#596#623#0#HTML" expanded="true" />
+                <element signature="e#661#680#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -75,43 +63,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PiHapp/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
+            <state relative-caret-position="587">
               <caret line="99" column="1" selection-start-line="99" selection-start-column="1" selection-end-line="99" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PiHapp/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="27" selection-start-line="27" selection-end-line="28" selection-end-column="80" />
-              <folding>
-                <element signature="e#630#662#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PiHapp/wsgi.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pih_app/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="28" lean-forward="true" selection-start-column="28" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pih_app/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="245">
+              <caret line="48" column="9" lean-forward="true" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -122,8 +84,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/pih_app/personal-dashboard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="291">
+              <caret line="26" column="79" selection-start-line="26" selection-start-column="79" selection-end-line="26" selection-end-column="79" />
             </state>
           </provider>
         </entry>
@@ -135,8 +97,8 @@
       <list>
         <option value="JavaScript File" />
         <option value="CSS File" />
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -168,8 +130,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/registration/password_change_form.html" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.py" />
         <option value="$PROJECT_DIR$/templates/pih_app/flights_expense.html" />
         <option value="$PROJECT_DIR$/templates/pih_app/visa_expense.html" />
         <option value="$PROJECT_DIR$/templates/pih_app/add-expenses.html" />
@@ -178,7 +138,6 @@
         <option value="$PROJECT_DIR$/templates/pih_app/expenses/expenses-card.html" />
         <option value="$PROJECT_DIR$/templates/pih_app/preview.html" />
         <option value="$PROJECT_DIR$/templates/pih_app/submit-request.html" />
-        <option value="$PROJECT_DIR$/templates/pih_app/add-visitors.html" />
         <option value="$PROJECT_DIR$/templates/pih_app/submit-request-success.html" />
         <option value="$PROJECT_DIR$/accounts/models.py" />
         <option value="$PROJECT_DIR$/accounts/admin.py" />
@@ -190,7 +149,6 @@
         <option value="$PROJECT_DIR$/static/css/custom_css.css" />
         <option value="$PROJECT_DIR$/static/css/dashboard-table.css" />
         <option value="$PROJECT_DIR$/templates/pih_app/reviewer/review-form.html" />
-        <option value="$PROJECT_DIR$/templates/pih_app/base.html" />
         <option value="$PROJECT_DIR$/pih_app/admin.py" />
         <option value="$PROJECT_DIR$/templates/registration/login.html" />
         <option value="$PROJECT_DIR$/templates/pih_app/reviewer-dashboard.html" />
@@ -198,27 +156,31 @@
         <option value="$PROJECT_DIR$/templates/pih_app/under-review.html" />
         <option value="$PROJECT_DIR$/templates/pih_app/rejected.html" />
         <option value="$PROJECT_DIR$/templates/pih_app/approved.html" />
-        <option value="$PROJECT_DIR$/templates/pih_app/review-form.html" />
         <option value="$PROJECT_DIR$/templates/pih_app/modals/reimburse-modal.html" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/PiHapp/settings.py" />
         <option value="$PROJECT_DIR$/templates/pih_app/expenses/expense-review-card.html" />
-        <option value="$PROJECT_DIR$/templates/pih_app/expenses/flights.html" />
+        <option value="$PROJECT_DIR$/pih_app/models.py" />
+        <option value="$PROJECT_DIR$/pih_app/forms.py" />
+        <option value="$PROJECT_DIR$/pih_app/templatetags/__init__.py" />
+        <option value="$PROJECT_DIR$/pih_app/templatetags/tags.py" />
+        <option value="$PROJECT_DIR$/templates/pih_app/review-request.html" />
+        <option value="$PROJECT_DIR$/templates/pih_app/view-pending-requests.html" />
+        <option value="$PROJECT_DIR$/templates/pih_app/review-form.html" />
+        <option value="$PROJECT_DIR$/pih_app/views.py" />
+        <option value="$PROJECT_DIR$/pih_app/urls.py" />
         <option value="$PROJECT_DIR$/static/js/expense.js" />
-        <option value="$PROJECT_DIR$/templates/pih_app/expenses/accommodation.html" />
         <option value="$PROJECT_DIR$/templates/pih_app/expenses/seacoach.html" />
         <option value="$PROJECT_DIR$/templates/pih_app/expenses/transport.html" />
         <option value="$PROJECT_DIR$/templates/pih_app/expenses/visa.html" />
         <option value="$PROJECT_DIR$/templates/pih_app/expenses/other.html" />
-        <option value="$PROJECT_DIR$/pih_app/models.py" />
-        <option value="$PROJECT_DIR$/pih_app/forms.py" />
-        <option value="$PROJECT_DIR$/pih_app/views.py" />
-        <option value="$PROJECT_DIR$/pih_app/urls.py" />
-        <option value="$PROJECT_DIR$/pih_app/templatetags/__init__.py" />
-        <option value="$PROJECT_DIR$/pih_app/templatetags/tags.py" />
+        <option value="$PROJECT_DIR$/templates/pih_app/expenses/flights.html" />
+        <option value="$PROJECT_DIR$/templates/pih_app/expenses/accommodation.html" />
+        <option value="$PROJECT_DIR$/templates/pih_app/base.html" />
+        <option value="$PROJECT_DIR$/templates/pih_app/add-visitors.html" />
         <option value="$PROJECT_DIR$/templates/pih_app/personal-dashboard.html" />
-        <option value="$PROJECT_DIR$/templates/pih_app/view-pending-requests.html" />
+        <option value="$PROJECT_DIR$/templates/pih_app/view-approved-requests.html" />
       </list>
     </option>
   </component>
@@ -249,8 +211,7 @@
             <path>
               <item name="pih_app" type="b2602c69:ProjectViewProjectNode" />
               <item name="pih_app" type="462c0819:PsiDirectoryNode" />
-              <item name="pih_app" type="462c0819:PsiDirectoryNode" />
-              <item name="templatetags" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pih_app" type="b2602c69:ProjectViewProjectNode" />
@@ -262,6 +223,13 @@
               <item name="pih_app" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="pih_app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pih_app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pih_app" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="pih_app" type="462c0819:PsiDirectoryNode" />
+              <item name="expenses" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pih_app" type="b2602c69:ProjectViewProjectNode" />
@@ -285,20 +253,20 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\o.iyer\PycharmProjects\PiHapp\templates\pih_app\personal-dashboard" />
+      <recent name="C:\Users\o.iyer\PycharmProjects\PiHapp\templates\pih_app" />
+      <recent name="C:\Users\o.iyer\PycharmProjects\PiHapp\templates\pih_app\reviewer" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\o.iyer\PycharmProjects\PiHapp\static" />
       <recent name="C:\Users\o.iyer\PycharmProjects\PiHapp\accounts" />
       <recent name="C:\Users\o.iyer\PycharmProjects\PiHapp\templates\registration" />
       <recent name="C:\Users\o.iyer\PycharmProjects\PiHapp\users" />
       <recent name="C:\Users\o.iyer\PycharmProjects\PiHapp\static\js" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\o.iyer\PycharmProjects\PiHapp\templates\pih_app\personal-dashboard" />
-      <recent name="C:\Users\o.iyer\PycharmProjects\PiHapp\templates\pih_app" />
-      <recent name="C:\Users\o.iyer\PycharmProjects\PiHapp\templates\pih_app\reviewer" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -383,32 +351,33 @@
       <workItem from="1561212445969" duration="10000" />
       <workItem from="1561213464717" duration="78000" />
       <workItem from="1561228454701" duration="4336000" />
-      <workItem from="1561282559054" duration="7019000" />
+      <workItem from="1561282559054" duration="9929000" />
+      <workItem from="1561301206933" duration="2737000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="149560000" />
+    <option name="totallyTimeSpent" value="155207000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="32" width="1920" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49852508" visible="true" weight="0.23390558" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49852508" visible="true" weight="0.23712446" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.5014749" side_tool="true" weight="0.23390558" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.25886524" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49892703" weight="0.32925472" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32978722" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32925472" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.502021" side_tool="true" weight="0.45921987" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.497979" visible="true" weight="0.23915462" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50107294" side_tool="true" weight="0.23915462" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4967811" visible="true" weight="0.23915462" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -444,9 +413,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/static/DataTables/Select-1.3.0/js/select.jqueryui.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python37/site-packages/django/forms/models.py" />
     <entry file="file://$PROJECT_DIR$/accounts/admin.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -506,20 +472,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/pih_app/add-visitors.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/pih_app/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" selection-start-line="14" selection-end-line="14" selection-end-column="198" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/pih_app/personal-dashboard/items-need-organizing.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -545,13 +497,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/pih_app/review-form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1425">
-          <caret line="95" column="36" selection-start-line="95" selection-start-column="36" selection-end-line="95" selection-end-column="85" />
         </state>
       </provider>
     </entry>
@@ -608,79 +553,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/pih_app/review-request.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/pih_app/expenses/flights.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="20" selection-start-line="20" selection-end-line="48" selection-end-column="11" />
-          <folding>
-            <element signature="e#517#579#0#HTML" expanded="true" />
-            <element signature="e#1025#1056#0#HTML" expanded="true" />
-            <element signature="e#1150#1195#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/pih_app/expenses/transport.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="670">
-          <caret line="48" column="11" selection-start-line="48" selection-start-column="11" selection-end-line="48" selection-end-column="11" />
-          <folding>
-            <element signature="e#1020#1051#0#HTML" expanded="true" />
-            <element signature="e#1150#1195#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/pih_app/expenses/visa.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="48" column="11" selection-start-line="48" selection-start-column="11" selection-end-line="48" selection-end-column="11" />
-          <folding>
-            <element signature="e#1015#1046#0#HTML" expanded="true" />
-            <element signature="e#1145#1190#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/pih_app/expenses/other.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="30" column="12" lean-forward="true" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
-          <folding>
-            <element signature="e#1309#1340#0#HTML" expanded="true" />
-            <element signature="e#1439#1484#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/pih_app/expenses/accommodation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="586">
-          <caret line="48" column="11" selection-start-line="48" selection-start-column="11" selection-end-line="48" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/expense.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="54" lean-forward="true" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/pih_app/expenses/seacoach.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="50" column="6" lean-forward="true" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/pih_app/expenses/expense-review-card.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
@@ -721,16 +593,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PiHapp/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="99" column="1" selection-start-line="99" selection-start-column="1" selection-end-line="99" selection-end-column="1" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/pih_app/templatetags/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/PiHapp/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
+        <state relative-caret-position="479">
           <caret line="27" selection-start-line="27" selection-end-line="28" selection-end-column="80" />
           <folding>
             <element signature="e#630#662#0" expanded="true" />
@@ -738,54 +606,145 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PiHapp/wsgi.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pih_app/views.py">
+    <entry file="file://$PROJECT_DIR$/templates/pih_app/review-request.html" />
+    <entry file="file://$PROJECT_DIR$/templates/pih_app/view-pending-requests.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="378" column="9" lean-forward="true" selection-start-line="378" selection-start-column="9" selection-end-line="378" selection-end-column="9" />
+        <state relative-caret-position="162">
+          <caret line="9" column="73" selection-end-line="43" selection-end-column="14" />
           <folding>
-            <element signature="e#0#64#0" expanded="true" />
+            <element signature="e#178#202#0#HTML" expanded="true" />
+            <element signature="e#258#277#0#HTML" expanded="true" />
+            <element signature="e#289#308#0#HTML" expanded="true" />
+            <element signature="e#236#263#0#HTML" expanded="true" />
+            <element signature="e#301#321#0#HTML" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pih_app/templatetags/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pih_app/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="28" lean-forward="true" selection-start-column="28" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/pih_app/personal-dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pih_app/templatetags/tags.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+        <state relative-caret-position="198">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/pih_app/view-pending-requests.html">
+    <entry file="file://$PROJECT_DIR$/PiHapp/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/pih_app/expenses/visa.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="63" selection-start-line="9" selection-start-column="63" selection-end-line="9" selection-end-column="63" />
+        <state relative-caret-position="479">
+          <caret line="57" column="20" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/expense.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/pih_app/expenses/seacoach.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/pih_app/expenses/transport.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="479">
+          <caret line="58" column="20" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/pih_app/review-form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-934">
+          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/pih_app/expenses/other.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="62" column="9" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/pih_app/expenses/flights.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="479">
+          <caret line="56" column="20" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/pih_app/expenses/accommodation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1044">
+          <caret line="58" column="56" lean-forward="true" selection-start-line="58" selection-start-column="56" selection-end-line="58" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/pih_app/add-visitors.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="31" column="6" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/pih_app/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PiHapp/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="587">
+          <caret line="99" column="1" selection-start-line="99" selection-start-column="1" selection-end-line="99" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pih_app/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="48" column="9" lean-forward="true" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
           <folding>
-            <element signature="e#169#188#0#HTML" expanded="true" />
-            <element signature="e#236#263#0#HTML" expanded="true" />
-            <element signature="e#301#321#0#HTML" expanded="true" />
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pih_app/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="497">
+          <caret line="390" column="49" selection-start-line="390" selection-start-column="49" selection-end-line="390" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#64#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/pih_app/personal-dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="26" column="79" selection-start-line="26" selection-start-column="79" selection-end-line="26" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/pih_app/view-approved-requests.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="22" column="43" lean-forward="true" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
+          <folding>
+            <element signature="e#596#623#0#HTML" expanded="true" />
+            <element signature="e#661#680#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

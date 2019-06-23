@@ -381,5 +381,11 @@ def expense_reimbursed(request, expense_id):
 
 @login_required
 def view_pending_requests(request):
-    requests = request.user.request_set.all()
+    requests = Request.objects.filter(status="review", host=request.user)
     return render(request, "pih_app/view-pending-requests.html", {"r": requests})
+
+
+@login_required
+def view_approved_requests(request):
+    requests = Request.objects.filter(status="approved", host=request.user)
+    return render(request, "pih_app/view-approved-requests.html", {"r": requests})

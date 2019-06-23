@@ -24,7 +24,7 @@
                 <img class="card-img-top" src="{% static "images/approved.svg" %}" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">{{ approved_requests.count }} Request(s) Approved</h5><br>
-                                <a href="" class="btn btn-primary">View Requests</a>
+                                <a href="{% url "pih_app:view_approved_requests" %}" class="btn btn-primary">View Requests</a>
                     </div>
             </div>
         </div>

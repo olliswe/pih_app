@@ -50,14 +50,10 @@
 <button class="btn btn-secondary" onclick="goBack()" style="margin-top: 20px">Go Back</button>
 </div>
 </div>
+</div>
 {% endblock %}
 
 
 {% block customjs %}
-        <script>
-    function goBack() {
-  window.history.back();
-}
-    </script>
     <script src="{% static "js/expense.js" %}"></script>
 {% endblock %}
