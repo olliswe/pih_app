@@ -382,10 +382,42 @@ def expense_reimbursed(request, expense_id):
 @login_required
 def view_pending_requests(request):
     requests = Request.objects.filter(status="review", host=request.user)
-    return render(request, "pih_app/view-pending-requests.html", {"r": requests})
+    return render(
+        request,
+        "pih_app/personal-dashboard/view-pending-requests.html",
+        {"r": requests},
+    )
 
 
 @login_required
 def view_approved_requests(request):
     requests = Request.objects.filter(status="approved", host=request.user)
-    return render(request, "pih_app/view-approved-requests.html", {"r": requests})
+    return render(
+        request,
+        "pih_app/personal-dashboard/view-approved-requests.html",
+        {"r": requests},
+    )
+
+
+@login_required
+def view_rejected_requests(request):
+    requests = Request.objects.filter(status="rejected", host=request.user)
+    return render(
+        request,
+        "pih_app/personal-dashboard/view-rejected-requests.html",
+        {"r": requests},
+    )
+
+
+@login_required
+def view_items_organizing(request):
+    items = Expense.manager.need_organizing().filter(name_of_organizer=request.user)
+    type_choices = Expense.TYPE_CHOICES
+    type_list = []
+    for type in type_choices:
+        type_list.append(type[0])
+    return render(
+        request,
+        "pih_app/personal-dashboard/view-items-organizing.html",
+        {"items": items, "types": type_list},
+    )

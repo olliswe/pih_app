@@ -35,7 +35,7 @@
                 <img class="card-img-top" src="{% static "images/rejected.svg" %}" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">{{ rejected_requests.count }} Request(s) Rejected</h5><br>
-                                <a href="" class="btn btn-primary">View Requests</a>
+                                <a href="{% url "pih_app:view_rejected_requests" %}" class="btn btn-primary">View Requests</a>
                     </div>
             </div>
         </div>
@@ -45,7 +45,7 @@
                 <img class="card-img-top" src="{% static "images/organize.svg" %}" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">{{ items_need_organizing.count }} Item(s) that need organizing</h5>
-                                <a href="" class="btn btn-primary">View Items</a>
+                                <a href="{% url "pih_app:view_items_organizing" %}" class="btn btn-primary">View Items</a>
                     </div>
             </div>
         </div>

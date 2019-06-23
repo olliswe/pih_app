@@ -61,5 +61,19 @@ urlpatterns = [
         views.view_pending_requests,
         name="view_pending_requests",
     ),
-    path("view-approved-requests/",views.view_approved_requests,name="view_approved_requests")
+    path(
+        "view-approved-requests/",
+        views.view_approved_requests,
+        name="view_approved_requests",
+    ),
+    path(
+        "view-rejected-requests/",
+        views.view_rejected_requests,
+        name="view_rejected_requests",
+    ),
+    path(
+        "view-items-organizing/",
+        views.view_items_organizing,
+        name="view_items_organizing",
+    ),
 ]

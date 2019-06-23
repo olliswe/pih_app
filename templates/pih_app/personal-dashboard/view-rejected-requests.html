@@ -1,0 +1,43 @@
+{% extends "pih_app/base.html" %}
+{% load staticfiles %}
+{% load tags %}
+
+
+
+{% block content %}
+
+    <div class="container">
+    <a class="btn btn-secondary" href="{% url "pih_app:personal_dashboard" %}" style="margin-top: 10px">Return</a>
+    <div class="row justify-content-center" style="margin:10px">
+        <h3>Rejected Requests</h3>
+    </div>
+    <div class="row justify-content-center" style="margin:10px">
+        <h5>The following Requests have been rejected by a Reviewer</h5>
+    </div>
+        <div class="row">
+
+            {% for request in r %}
+            <div class="col-md-4" style="margin-bottom: 20px">
+            <div class="card h-100" style="width: 90%;" >
+                <img class="card-img-top" src="{% static "images/review.svg" %}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Request(s) ID {{ request.id }}</h5>
+                        <p>
+                            Submitted {{ request.submission_date|timesince|upto:','}} ago
+                        <br>
+                            <strong>Visitors:</strong> {{ request.print_names_of_visitors }}
+                        <br>
+                           <strong>Arrival Date:</strong> {{ request.arrival_date }}
+                        <br>
+                        </p>
+                         <a href="{% url "pih_app:review_request" id=request.id %}" class="btn btn-primary">View Request</a>
+                    </div>
+            </div>
+            </div>
+            {% endfor %}
+
+
+        </div>
+    </div>
+
+{% endblock %}
