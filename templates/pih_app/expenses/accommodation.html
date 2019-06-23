@@ -3,57 +3,62 @@
 
 {% block content %}
 <div class="container" style="margin-top: 20px">
-<div class="row justify-content-center" style="width:100%">
-    <img src="{% static "images/form_step5.svg" %}" alt="">
+    <div class="row justify-content-center" style="width:100%">
+        <img src="{% static "images/form_step5.svg" %}" alt="">
 
 
 
-<div class="container" style="margin-top: 20px">
-    <div class="row justify-content-center">
-        <h3> Submit new Request</h3>
-    </div>
-    <div class="row justify-content-center">
-        <h5>Add Accommodation Expenses</h5>
-    </div>
-</div>
-
-<div class="container" style="margin-top: 20px; margin-bottom: 20px; margin-left:20%">
-    <form action="" method="post">
-    {% csrf_token %}
-        <p>{{ form.organized_by_us.label_tag }}
-            <input type="checkbox" name="organized_by_us" id="id_organized_by_us" style="width:15px;height: 15px">
-        </p>
-        <p id="organizer_name" style="display:none">
-            {{ form.name_of_organizer.label_tag }}{{ form.name_of_organizer }}
-        </p>
-        <p>
-            {{ form.expenses_covered_by.label_tag }}{{ form.expenses_covered_by }}
-        </p>
-        <p id="expensed_amount" style="display:none">
-            {{ form.expenses_amount.label_tag }}{{ form.expenses_amount }}
-        </p>
-        <div class="form-group">
-            <div class="form-group" >
-                {{ form.notes.label_tag }}
-            <div class="row" style="margin-left:10px">
-                <textarea name="notes" id="id_notes" cols="100" rows="5" maxlength="1000"></textarea>
+        <div class="container" style="margin-top: 20px">
+            <div class="row justify-content-center">
+                <h3> Submit new Request</h3>
+            </div>
+            <div class="row justify-content-center">
+                <h5>Add Accommodation Expenses</h5>
             </div>
         </div>
+
+        <div class="container" style="margin-top: 20px; margin-bottom: 20px; margin-left:20%">
+            <form action="" method="post">
+                {% csrf_token %}
+                <p>
+                    {{ form.expenses_covered_by.label_tag }}{{ form.expenses_covered_by }}
+                </p>
+                <p id="expensed_amount" style="display:none">
+                    {{ form.expenses_amount.label_tag }}{{ form.expenses_amount }}
+                </p>
+
+                <p>{{ form.organized_by_us.label_tag }}
+                    <input type="checkbox" name="organized_by_us" id="id_organized_by_us"
+                        style="width:15px;height: 15px">
+                    <input id="disabled-checkbox" type="checkbox" disabled="disabled" checked="checked"
+                        style="width:15px;height: 15px; display:none" />
+                </p>
+                <p id="organizer_name" style="display:none">
+                    {{ form.name_of_organizer.label_tag }}{{ form.name_of_organizer }}
+                </p>
+
+                <div class="form-group">
+                    <div class="form-group">
+                        {{ form.notes.label_tag }}
+                        <div class="row" style="margin-left:10px">
+                            <textarea name="notes" id="id_notes" cols="100" rows="5" maxlength="1000"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <input type="submit" value="Confirm & Next" class="btn btn-primary">
+            </form>
+            <button class="btn btn-secondary" onclick="goBack()" style="margin-top: 20px">Go Back</button>
         </div>
-
-        <input type="submit" value="Confirm & Next" class="btn btn-primary">
-    </form>
-<button class="btn btn-secondary" onclick="goBack()" style="margin-top: 20px">Go Back</button>
-</div>
-</div>
-{% endblock %}
+    </div>
+    {% endblock %}
 
 
-{% block customjs %}
-        <script>
-    function goBack() {
-  window.history.back();
-}
+    {% block customjs %}
+    <script>
+        function goBack() {
+            window.history.back();
+        }
     </script>
     <script src="{% static "js/expense.js" %}"></script>
-{% endblock %}
+    {% endblock %}

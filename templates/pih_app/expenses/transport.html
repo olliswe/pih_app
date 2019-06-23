@@ -20,18 +20,22 @@
 <div class="container" style="margin-top: 20px; margin-bottom: 20px; margin-left:20%">
     <form action="" method="post">
     {% csrf_token %}
-        <p>{{ form.organized_by_us.label_tag }}
-            <input type="checkbox" name="organized_by_us" id="id_organized_by_us" style="width:15px;height: 15px">
-        </p>
-        <p id="organizer_name" style="display:none">
-            {{ form.name_of_organizer.label_tag }}{{ form.name_of_organizer }}
-        </p>
         <p>
             {{ form.expenses_covered_by.label_tag }}{{ form.expenses_covered_by }}
         </p>
         <p id="expensed_amount" style="display:none">
             {{ form.expenses_amount.label_tag }}{{ form.expenses_amount }}
         </p>
+
+        <p>{{ form.organized_by_us.label_tag }}
+            <input type="checkbox" name="organized_by_us" id="id_organized_by_us" style="width:15px;height: 15px">
+            <input id="disabled-checkbox" type="checkbox" disabled="disabled" checked="checked"  style="width:15px;height: 15px; display:none"
+            />
+        </p>
+        <p id="organizer_name" style="display:none">
+            {{ form.name_of_organizer.label_tag }}{{ form.name_of_organizer }}
+        </p>
+
         <div class="form-group">
             <div class="form-group" >
                 {{ form.notes.label_tag }}

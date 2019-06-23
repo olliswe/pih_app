@@ -1,6 +1,17 @@
 {% extends 'pih_app/base.html' %}
 {% load staticfiles %}
 
+{% block custom_stylesheets%}
+
+{#    JQUERY DATABLES#}
+<link rel="stylesheet" type="text/css" href="{% static "DataTables/datatables.min.css" %}" />
+
+
+<!-- custom CSS-->
+<link rel="stylesheet" href="{% static "css/dashboard-table.css" %}" />
+
+{% endblock %}
+
 
 {% block content %}
 <div class="container">
@@ -8,71 +19,77 @@
         <h2>Dashboard: PIH Sierra Leone</h2>
     </div>
 
-{% if requests %}
+    {% if requests %}
 
-<div class="container">
-    <table class="table table-hover">
-        <thead>
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Host</th>
-                <th scope="col">Visitor(s)</th>
-                <th scope="col" style="text-align:center; width: 10em">Arrival Date</th>
-                <th scope="col" style="text-align:center; width: 10em">Departure Date</th>
-                <th scope="col" style="text-align:center;width: 5em">Approval</th>
-                <th scope="col" style="text-align:center;width: 5em">Organization</th>
-                <th scope="col" style="text-align:center;width: 5em">Reimbursement</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for r in requests %}
-             <tr class="clickable-row" data-href="{% url "pih_app:review_request" id=r.id %}">
-                <td>{{ r.id }}</td>
-                <td>{{ r.host }}</td>
-                <td>{{ r.print_names_of_visitors }}</td>
-                <td style="text-align:center; width: 10em">{{ r.arrival_date }}</td>
-                <td style="text-align:center; width: 10em">{{ r.departure_date }}</td>
-                <td style="text-align:center;width: 5em">
-                    {% if r.status == 'review' %}
-                        <img src="{% static "images/not_completed.svg" %}" alt="" data-toggle="tooltip" data-placement="top" title="Request needs approval">
-                    {% elif r.status == 'approved' %}
-                        <img src="{% static "images/completed.svg" %}" alt="" data-toggle="tooltip" data-placement="top" title="Request approved">
-                    {% endif %}
+    <div class="container">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Host</th>
+                    <th scope="col">Visitor(s)</th>
+                    <th scope="col" style="text-align:center; width: 10em">Arrival Date</th>
+                    <th scope="col" style="text-align:center; width: 10em">Departure Date</th>
+                    <th scope="col" style="text-align:center;width: 5em">Approval</th>
+                    <th scope="col" style="text-align:center;width: 5em">Organization</th>
+                    <th scope="col" style="text-align:center;width: 5em">Reimbursement</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for r in requests %}
+                <tr class="clickable-row" data-href="{% url "pih_app:review_request" id=r.id %}">
+                    <td>{{ r.id }}</td>
+                    <td>{{ r.host }}</td>
+                    <td>{{ r.print_names_of_visitors }}</td>
+                    <td style="text-align:center; width: 10em">{{ r.arrival_date }}</td>
+                    <td style="text-align:center; width: 10em">{{ r.departure_date }}</td>
+                    <td style="text-align:center;width: 5em">
+                        {% if r.status == 'review' %}
+                        <img src="{% static "images/not_completed.svg" %}" alt="" data-toggle="tooltip"
+                            data-placement="top" title="Request needs approval">
+                        {% elif r.status == 'approved' %}
+                        <img src="{% static "images/completed.svg" %}" alt="" data-toggle="tooltip" data-placement="top"
+                            title="Request approved">
+                        {% endif %}
 
-                </td>
-                <td style="text-align:center;width: 5em">
-                    {% if r.status == 'approved' %}
-                    <img src="{% static 'images/'|add:r.organization_status|add:'.svg' %}" alt="" data-toggle="tooltip" data-placement="top" title="{{ r.get_organized_counter.0 }} out of {{ r.get_organized_counter.1 }} item(s) organized">
-                    {% endif %}
-                </td>
-                <td style="text-align:center;width: 5em">
-                    {% if r.status == 'approved' and r.organization_status == 'completed' %}
-                    <img src="{% static 'images/'|add:r.reimbursement_status|add:'.svg' %}" alt="" data-toggle="tooltip" data-placement="top" title="{{ r.get_reimbursement_counter.0 }} out of {{ r.get_reimbursement_counter.1 }} expense(s) reimbursed">
-                    {% endif %}
-                </td>
-             </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+                    </td>
+                    <td style="text-align:center;width: 5em">
+                        {% if r.status == 'approved' %}
+                        <img src="{% static 'images/'|add:r.organization_status|add:'.svg' %}" alt=""
+                            data-toggle="tooltip" data-placement="top"
+                            title="{{ r.get_organized_counter.0 }} out of {{ r.get_organized_counter.1 }} item(s) organized">
+                        {% endif %}
+                    </td>
+                    <td style="text-align:center;width: 5em">
+                        {% if r.status == 'approved' and r.organization_status == 'completed' %}
+                        <img src="{% static 'images/'|add:r.reimbursement_status|add:'.svg' %}" alt=""
+                            data-toggle="tooltip" data-placement="top"
+                            title="{{ r.get_reimbursement_counter.0 }} out of {{ r.get_reimbursement_counter.1 }} expense(s) reimbursed">
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
 
 
-</div>
+    </div>
 
-{% else %}
-    
-<div class="text-center">
-    <h5>There are currently no active Requests that need reviewing</h5>
-</div>
-<div class="row justify-content-center">
-    <a style="margin:20px" class="btn btn-primary" href="{% url "pih_app:submit_request" %}">
-        Submit new Request
-    </a>
-    <a style="margin:20px" class="btn btn-primary" href="">
-        View Archive
-    </a>
-</div>
+    {% else %}
 
-{% endif %}
+    <div class="text-center">
+        <h5>There are currently no active Requests that need reviewing</h5>
+    </div>
+    <div class="row justify-content-center">
+        <a style="margin:20px" class="btn btn-primary" href="{% url "pih_app:submit_request" %}">
+            Submit new Request
+        </a>
+        <a style="margin:20px" class="btn btn-primary" href="">
+            View Archive
+        </a>
+    </div>
+
+    {% endif %}
 
 </div>
 
@@ -82,15 +99,14 @@
 
 {% block customjs %}
 
+<script type="text/javascript" src="{% static "DataTables/datatables.min.js" %}"></script>
+
 <script>
-    $(".clickable-row").click(function() {
+    $(".clickable-row").click(function () {
         window.location = $(this).data("href");
     });
 
     $('.clickable-row').css('cursor', 'pointer')
-
-
-
 </script>
 
 {% endblock %}

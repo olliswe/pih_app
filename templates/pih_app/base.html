@@ -15,13 +15,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
 
+{% block custom_stylesheets %}
 
-{#    JQUERY DATABLES#}
-    <link rel="stylesheet" type="text/css" href="{% static "DataTables/datatables.min.css" %}"/>
-
-
-<!-- custom CSS-->
-        <link rel="stylesheet" href="{% static "css/dashboard-table.css" %}"/>
+{% endblock %}
 
 
 
@@ -86,7 +82,7 @@
 <script src="{% static "js/jquery-3.4.1.min.js" %}"></script>
 <script src="{% static "js/popper.min.js" %}"></script>
 <script src="{% static "js/bootstrap.min.js" %}"></script>
-<script type="text/javascript" src="{% static "DataTables/datatables.min.js" %}"></script>
+
 
 {% block customjs %}
 {% endblock %}

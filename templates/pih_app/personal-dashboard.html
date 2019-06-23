@@ -1,6 +1,7 @@
 {% extends 'pih_app/base.html' %}
 {% load staticfiles %}
 
+
 {% block content %}
 <div class="container">
     <div class="row justify-content-center" style="margin-top:20px; margin-bottom: 20px">
@@ -13,7 +14,7 @@
                 <img class="card-img-top" src="{% static "images/review.svg" %}" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">{{ requests_pending_review.count }} Request(s) pending review</h5>
-                                <a href="" class="btn btn-primary">View Requests</a>
+                                <a href="{% url "pih_app:view_pending_requests" %}" class="btn btn-primary">View Requests</a>
                     </div>
             </div>
         </div>
