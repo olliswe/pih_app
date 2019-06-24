@@ -22,7 +22,7 @@
     {% if requests %}
 
     <div class="container">
-        <table class="table table-hover">
+        <table class="table table-hover" id="dashboard-table">
             <thead>
                 <tr>
                     <th scope="col">ID</th>
@@ -107,6 +107,29 @@
     });
 
     $('.clickable-row').css('cursor', 'pointer')
+
+
+
+    $(document).ready( function () {
+    $('#dashboard-table').DataTable({
+            columnDefs: [
+                {orderable: true, targets: 0},
+                {orderable: false, targets:1},
+                {orderable:false, targets:2},
+                {orderable:true,searchable:false, targets:3 },
+                {orderable:true,searchable:false, targets:4 },
+                {orderable:false,searchable:false, targets:5 },
+                {orderable:false,searchable:false, targets:6 },
+                {orderable:false,searchable:false, targets:7 },
+
+            ],
+        "order": [[ 3, "asc" ]]
+        }
+    );
+
+    } );
+
 </script>
+
 
 {% endblock %}

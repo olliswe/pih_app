@@ -413,11 +413,16 @@ def view_rejected_requests(request):
 def view_items_organizing(request):
     items = Expense.manager.need_organizing().filter(name_of_organizer=request.user)
     type_choices = Expense.TYPE_CHOICES
-    type_list = []
+    type_dict = {}
+
     for type in type_choices:
-        type_list.append(type[0])
+        type_dict[type[0]] = 0
+
+    for item in items:
+        type_dict[item.type] += 1
+
     return render(
         request,
         "pih_app/personal-dashboard/view-items-organizing.html",
-        {"items": items, "types": type_list},
+        {"items": items, "types": type_dict},
     )

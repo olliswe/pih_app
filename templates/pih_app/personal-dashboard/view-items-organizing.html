@@ -17,40 +17,70 @@
 
 
 
-<div class="row justify-content-around" style="margin:30px">
+    <div class="row justify-content-around" style="margin:30px">
 
-
-{% for type in types %}
-    <div class="card" style="width: 16%; margin-bottom:10px">
-        <div class="row justify-content-center" style="margin-top:20px">
-            <div style="height:3em">
-                <img class="card-img-top" src="{% static "images/"|add:type|add:".svg" %}" alt="Card image cap" >
+    {% for type,count in types.items %}
+        <div class="card" style="width: 16%; margin-bottom:10px">
+            <div class="row justify-content-center" style="margin-top:20px">
+                <div style="height:3em">
+                    <img class="card-img-top" src="{% static "images/"|add:type|add:".svg" %}" alt="Card image cap" >
+                </div>
             </div>
+              <div class="card-body">
+                <p class="card-title">{{ type }}</p>
+                  <p>{% if count > 0 %}<strong>{{ count }} item(s) need organizing</strong>{% else %}No items<br><br>{% endif %}</p>
+
+                <button class="btn btn-primary" name="type-button" data-expense-type = "{{ type }}">View </button>
+              </div>
         </div>
-          <div class="card-body">
-            <p class="card-title">{{ type }}</p>
-            <button id="progress-button1" class="btn btn-primary" name="completed">View </button>
-          </div>
+    {% endfor %}
+
     </div>
 
-{% endfor %}
 
-</div>
 
-<div class="card">
-    <div class="card-body">
-        <div class="row">
-            <div class="col-md-2">
-                <img src="{% static 'images/Flights.svg' %}" alt="">
+    <div class="items-container">
+    {% for item in items %}
+    <div class="card" data-expense-type = "{{ item.type }}" style="margin-bottom:10px" name="item-card" hidden>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-2">
+                    <img src="{% static "images/"|add:item.type|add:".svg" %}" alt="">
+                </div>
+                <div class='col-md-2'><strong>Visitors: </strong>{{ item.request_form.print_names_of_visitors }}</div>
+                <div class='col-md-3'><strong>Host: </strong>{{ item.request_form.host }}</div>
+                <div class='col-md-3'><strong>Arrival Date: </strong>{{ item.request_form.arrival_date }}</div>
+                <div class='col-md-2'><a href="{% url "pih_app:review_request" id=item.request_form.id %}" class="btn btn-primary">
+                    View Details
+                </a></div>
             </div>
-            <div class='col-md-4'>Content test</div>
-            <div class='col-md-3'>Content</div>
-            <div class='col-md-3'>Content</div>
         </div>
     </div>
-</div>
+    {% endfor %}
+    </div>
 
 </div>
 
+
+{% endblock %}
+
+
+{% block customjs %}
+    <script>
+    $("[name='type-button']").click(function (){
+        var type =$(this).attr('data-expense-type');
+        $("[name='item-card']").each(function(){
+            if ($(this).attr("data-expense-type") == type){
+                $(this).attr('hidden',false)
+            }
+            else{
+                $(this).attr('hidden',true)
+
+            }        })
+    })
+
+
+
+    </script>
 
 {% endblock %}
