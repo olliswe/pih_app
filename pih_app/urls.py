@@ -76,4 +76,5 @@ urlpatterns = [
         views.view_items_organizing,
         name="view_items_organizing",
     ),
+    path("archive", views.archive, name="archive"),
 ]

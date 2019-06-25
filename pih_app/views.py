@@ -426,3 +426,14 @@ def view_items_organizing(request):
         "pih_app/personal-dashboard/view-items-organizing.html",
         {"items": items, "types": type_dict},
     )
+
+
+@login_required
+def archive(request):
+    r = []
+
+    for request_form in Request.objects.all():
+        if request_form.is_archived() == True:
+            r.append(request_form)
+
+    return render(request, "pih_app/archive.html", {"requests": r})

@@ -13,7 +13,7 @@
 </div>
 {% endif %}
 
-<div class="container">
+<div class="container" style="margin-top:20px">
     <div class="row justify-content-center" >
         <h3>Review Request ID: {{ r.id }}</h3>
     </div>
@@ -43,7 +43,13 @@
      <br><br>
     <strong>Review Comment: </strong> {{ r.review_comment }}
     {% endif %}
-<div class=""></div>
+    {% if r.is_archived and r.status != "rejected"%}
+        <br><br>
+        <strong>All items in this request have been completed - it has therefore been moved to the Archive</strong>
+    {% elif r.status == "rejected"%}
+        <br><br>
+        <strong>The request was rejected - it has therefore been moved to the Archive</strong>
+    {% endif %}
 </div>
 </div>
 

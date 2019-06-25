@@ -17,8 +17,13 @@
 {% block content %}
 <div class="container">
     <div class="row justify-content-center" style="margin-top:20px; margin-bottom: 20px">
-        <h2>Dashboard: PIH Sierra Leone</h2>
+        <h2>Archive</h2>
     </div>
+    <div class="row justify-content-center" style="margin-top:20px; margin-bottom: 20px">
+        <h2>Requests which have been rejected or are completed will be displayed here</h2>
+    </div>
+
+
 
     {% if requests %}
 
@@ -53,6 +58,9 @@
                         {% elif r.status == 'approved' %}
                         <img src="{% static "images/completed.svg" %}" alt="" data-toggle="tooltip" data-placement="top"
                             title="Request approved">
+                        {% elif r.status == 'rejected' %}
+                        <img src="{% static "images/rejected_icon.svg" %}" alt="" data-toggle="tooltip" data-placement="top"
+                            title="Request rejected">
                         {% endif %}
 
                     </td>
@@ -81,15 +89,7 @@
     {% else %}
 
     <div class="text-center">
-        <h5>There are currently no active Requests that need reviewing</h5>
-    </div>
-    <div class="row justify-content-center">
-        <a style="margin:20px" class="btn btn-primary" href="{% url "pih_app:submit_request" %}">
-            Submit new Request
-        </a>
-        <a style="margin:20px" class="btn btn-primary" href="">
-            View Archive
-        </a>
+        <h5>There are no items in the Archive</h5>
     </div>
 
     {% endif %}
@@ -127,7 +127,7 @@
                 {orderable:false,searchable:false, targets:8 },
 
             ],
-        "order": [[ 4, "asc" ]]
+        "order": [[ 4, "desc" ]]
         }
     );
 
