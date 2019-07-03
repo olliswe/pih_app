@@ -1,1 +1,1 @@
-web: gunicorn PIHapp.wsgi --log-file -
+web: gunicorn PiHapp.wsgi --log-file -
