@@ -93,7 +93,9 @@ class Request(models.Model):
         null=True,
         blank=True,
     )
-    review_date = models.DateField(verbose_name="Reviewed on", null=True, blank=True)
+    review_date = models.DateTimeField(
+        verbose_name="Reviewed on", null=True, blank=True
+    )
 
     def get_status(self):
         return dict(Request.STATUS_CHOICES)[self.status]

@@ -9,6 +9,7 @@ from .forms import RequestForm, VisitorForm, ExpenseForm, ReviewForm, Reimbursem
 from .models import *
 from django.utils.timesince import timesince
 from django.utils import timezone
+from django.core.mail import send_mail
 
 
 @login_required
@@ -209,6 +210,12 @@ def add_other_expenses(request,):
 
 @login_required
 def preview_submission(request,):
+    recipient_list = []
+    recipient_query = User.objects.filter(reviewer=True).exclude(
+        email=request.user.email
+    )
+    for recipient in recipient_query:
+        recipient_list.append(recipient.email)
     if request.method == "POST":
 
         request_form_data = request.session["request_form_data"]
@@ -260,6 +267,30 @@ def preview_submission(request,):
             )
             del request.session["other"]
         finally:
+            mail_subject = (
+                "A new Visitor Request has been submitted for review by "
+                + request_object.host.__str__()
+            )
+            mail_message = (
+                "<p>The Request with ID: "
+                + str(request_object.id)
+                + "is waiting for your review."
+                '<p>Please click <a href="'
+                + str(request.build_absolute_uri())
+                + '">here</a> to review the request</p>'
+                + "<br><br>"
+                + "<p>This is an automated email sent by the Partner's in Health Sierra Leone Visitor Portal</p>"
+                + "<p>Please do not reply!</p>"
+            )
+            send_mail(
+                subject=mail_subject,
+                message="",
+                html_message=mail_message,
+                from_email="partnersinhealthsalone@gmail.com",
+                recipient_list=recipient_list,
+                fail_silently=False,
+            )
+
             return HttpResponseRedirect(
                 reverse(
                     "pih_app:submit_request_success",
@@ -295,16 +326,65 @@ def review_request(request, id, alert=None, alert_type=None):
                 id = request_form.id
                 alert = "Request was successfully approved"
                 alert_type = "success"
+                mail_subject = (
+                    "Visitor Request ID:" + str(request_form.id) + " has been approved."
+                )
+                mail_message = (
+                    "<p>Your Visitor Request with ID: "
+                    + str(request_form.id)
+                    + " has been approved by "
+                    + request_form.reviewer.__str__()
+                    + "</p>"
+                    + '<p>Please click <a href="'
+                    + request.build_absolute_uri()
+                    + '">here</a> to view the request and ensure that necessary action is taken to organize any outstanding items</p>'
+                    + "<br><br>"
+                    + "<p>This is an automated email sent by the Partner's in Health Sierra Leone Visitor Portal</p>"
+                    + "<p>Please do not reply!</p>"
+                )
+                send_mail(
+                    subject=mail_subject,
+                    message="",
+                    html_message=mail_message,
+                    from_email="partnersinhealthsalone@gmail.com",
+                    recipient_list=[request_form.host.email],
+                    fail_silently=False,
+                )
                 return HttpResponseRedirect(
                     reverse(
                         "pih_app:review_request_alert",
                         kwargs={"alert": alert, "alert_type": alert_type, "id": id},
                     )
                 )
+
             else:
                 id = request_form.id
                 alert = "Request was successfully rejected"
                 alert_type = "danger"
+                mail_subject = (
+                    "Visitor Request ID:" + str(request_form.id) + " has been rejected."
+                )
+                mail_message = (
+                    "<p>Your Visitor Request with ID: "
+                    + str(request_form.id)
+                    + " has been rejected by "
+                    + request_form.reviewer.__str__()
+                    + "</p>"
+                    + '<p>Please click <a href="'
+                    + request.build_absolute_uri()
+                    + '">here</a> to view the request and find out the reason for rejection</p>'
+                    + "<br><br>"
+                    + "<p>This is an automated email sent by the Partner's in Health Sierra Leone Visitor Portal</p>"
+                    + "<p>Please do not reply!</p>"
+                )
+                send_mail(
+                    subject=mail_subject,
+                    message="",
+                    html_message=mail_message,
+                    from_email="partnersinhealthsalone@gmail.com",
+                    recipient_list=[request_form.host.email],
+                    fail_silently=False,
+                )
                 return HttpResponseRedirect(
                     reverse(
                         "pih_app:review_request_alert",
@@ -429,6 +509,7 @@ def view_items_organizing(request):
 
 
 @login_required
+@reviewer_required
 def archive(request):
     r = []
 

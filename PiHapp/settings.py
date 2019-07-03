@@ -13,90 +13,86 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 
 
-
-
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TEMPLATE_DIR = os.path.join(BASE_DIR,"templates")
-STATIC_DIR = os.path.join(BASE_DIR,"static")
-PROJECT_ROOT   =   os.path.join(os.path.abspath(__file__))
-STATIC_ROOT  =   os.path.join(PROJECT_ROOT, "static")
-
+TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")
+STATIC_DIR = os.path.join(BASE_DIR, "static")
+PROJECT_ROOT = os.path.join(os.path.abspath(__file__))
+STATIC_ROOT = os.path.join(PROJECT_ROOT, "static")
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ')l5hum4&5-86by*r9x1$bush4_loi)mq5rv0j+-*#=38r4ujk^'
+SECRET_KEY = ")l5hum4&5-86by*r9x1$bush4_loi)mq5rv0j+-*#=38r4ujk^"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [ '92f40b27.ngrok.io', '127.0.0.1',  ]
+ALLOWED_HOSTS = ["92f40b27.ngrok.io", "127.0.0.1"]
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'accounts',
-    'pih_app',
-    'django.contrib.humanize'
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    "accounts",
+    "pih_app",
+    "django.contrib.humanize",
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.common.CommonMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = 'PiHapp.urls'
+ROOT_URLCONF = "PiHapp.urls"
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATE_DIR],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": [TEMPLATE_DIR],
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "context_processors": [
+                "django.template.context_processors.debug",
+                "django.template.context_processors.request",
+                "django.contrib.auth.context_processors.auth",
+                "django.contrib.messages.context_processors.messages",
+            ]
         },
-    },
+    }
 ]
 
-WSGI_APPLICATION = 'PiHapp.wsgi.application'
+WSGI_APPLICATION = "PiHapp.wsgi.application"
 
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'pih_app',
-            # 'USER': 'root',
-            # 'PASSWORD': '',
-            'USER': 'oliver',
-            'PASSWORD': '',
-            'HOST': 'localhost',
-            'PORT': '3306',
-        }
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "pih_app",
+        # 'USER': 'root',
+        # 'PASSWORD': '',
+        "USER": "oliver",
+        "PASSWORD": "",
+        "HOST": "localhost",
+        "PORT": "3306",
+    }
 }
 
 
@@ -105,27 +101,21 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"
     },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
+    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
+    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
 ]
 
-AUTH_USER_MODEL = 'accounts.User'
+AUTH_USER_MODEL = "accounts.User"
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = "UTC"
 
 USE_I18N = True
 
@@ -137,55 +127,58 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS=[
-    STATIC_DIR,
-]
+STATIC_URL = "/static/"
+STATICFILES_DIRS = [STATIC_DIR]
 
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = "smtp.gmail.com"
 
-EMAIL_HOST_USER = 'oliveriyer@gmail.com'
+EMAIL_HOST_USER = "oliveriyer@gmail.com"
 
-EMAIL_HOST_PASSWORD = 'Kahn1995'
+EMAIL_HOST_PASSWORD = "Kahn1995"
 
 EMAIL_PORT = 587
 
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = "/media/"
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-SESSION_SERIALIZER='django.contrib.sessions.serializers.PickleSerializer'
+SESSION_SERIALIZER = "django.contrib.sessions.serializers.PickleSerializer"
 
 
-if os.getcwd() == '/app':
+# EMAIL SETTINGS
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_HOST_USER = "partnersinhealthsalone@gmail.com"
+EMAIL_HOST_PASSWORD = "Olli95dif"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+
+if os.getcwd() == "/app":
     import django_heroku
 
     DEBUG = True
-    ALLOWED_HOSTS = ['pih-app.herokuapp.com']
+    ALLOWED_HOSTS = ["pih-app.herokuapp.com"]
 
-    DATABASE_URL = os.getenv('DATABASE_URL')
+    DATABASE_URL = os.getenv("DATABASE_URL")
 
-    database_attr = DATABASE_URL.split(':')
+    database_attr = DATABASE_URL.split(":")
 
-    JaName = database_attr[3].split('/')[1].rstrip("'")
-    JaUser = database_attr[1].lstrip('//')
-    JaPwrd = database_attr[2].split('@')[0]
-    JaHost = database_attr[2].split('@')[1]
-    JaPort = int(database_attr[3].split('/')[0])
+    JaName = database_attr[3].split("/")[1].rstrip("'")
+    JaUser = database_attr[1].lstrip("//")
+    JaPwrd = database_attr[2].split("@")[0]
+    JaHost = database_attr[2].split("@")[1]
+    JaPort = int(database_attr[3].split("/")[0])
 
     DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': JaName,
-            'USER': JaUser,
-            'PASSWORD': JaPwrd,
-            'HOST': JaHost,
+        "default": {
+            "ENGINE": "django.db.backends.mysql",
+            "NAME": JaName,
+            "USER": JaUser,
+            "PASSWORD": JaPwrd,
+            "HOST": JaHost,
         }
     }
-
-
-

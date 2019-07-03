@@ -41,18 +41,22 @@
 
 <div class="collapse navbar-collapse order-3" id="navbarNav">
     <ul class="navbar-nav ml-auto">
+     {% if request.user.reviewer %}
       <li class="nav-item">
         <a class="nav-link" href="{% url "pih_app:reviewer_dashboard" %}">Reviewer Dashboard</a>
       </li>
+     {% endif %}
        <li class="nav-item">
         <a class="nav-link" href="{% url "pih_app:personal_dashboard" %}">Personal Dashboard</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="{% url "pih_app:submit_request" %}">Submit New Request</a>
       </li>
+    {% if request.user.reviewer %}
       <li class="nav-item">
         <a class="nav-link" href="{% url 'pih_app:archive' %}">Archive</a>
       </li>
+    {% endif %}
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
