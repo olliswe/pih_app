@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="613c0afc-2aad-4825-97af-7623ace3d2c6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PiHapp/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/PiHapp/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pih_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/pih_app/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pih_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/pih_app/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pih_app/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pih_app/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/login.html" afterDir="false" />
-    </list>
+    <list default="true" id="613c0afc-2aad-4825-97af-7623ace3d2c6" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +61,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PiHapp/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-85">
@@ -78,10 +71,33 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Procfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="20" selection-start-column="20" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/runtime.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/requirements.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/pih_app/personal-dashboard/view-approved-requests.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="288">
-              <caret line="31" column="80" lean-forward="true" selection-start-line="31" selection-start-column="80" selection-end-line="31" selection-end-column="80" />
+              <caret line="31" column="80" selection-start-line="31" selection-start-column="80" selection-end-line="31" selection-end-column="80" />
             </state>
           </provider>
         </entry>
@@ -134,7 +150,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/static/js/submit-request.js" />
         <option value="$PROJECT_DIR$/templates/pih_app/expenses/expenses-card.html" />
         <option value="$PROJECT_DIR$/templates/pih_app/preview.html" />
         <option value="$PROJECT_DIR$/templates/pih_app/submit-request.html" />
@@ -185,6 +200,7 @@
         <option value="$PROJECT_DIR$/PiHapp/settings.py" />
         <option value="$PROJECT_DIR$/pih_app/views.py" />
         <option value="$PROJECT_DIR$/pih_app/models.py" />
+        <option value="$PROJECT_DIR$/Procfile" />
       </list>
     </option>
   </component>
@@ -235,18 +251,18 @@
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/static/images" />
-      <recent name="$PROJECT_DIR$/templates/pih_app/personal-dashboard" />
-      <recent name="C:\Users\o.iyer\PycharmProjects\PiHapp\static" />
-      <recent name="C:\Users\o.iyer\PycharmProjects\PiHapp\accounts" />
-      <recent name="C:\Users\o.iyer\PycharmProjects\PiHapp\templates\registration" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/templates/pih_app/personal-dashboard" />
       <recent name="C:\Users\o.iyer\PycharmProjects\PiHapp\templates\pih_app\personal-dashboard" />
       <recent name="C:\Users\o.iyer\PycharmProjects\PiHapp\templates\pih_app" />
       <recent name="C:\Users\o.iyer\PycharmProjects\PiHapp\templates\pih_app\reviewer" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/static/images" />
+      <recent name="$PROJECT_DIR$/templates/pih_app/personal-dashboard" />
+      <recent name="C:\Users\o.iyer\PycharmProjects\PiHapp\static" />
+      <recent name="C:\Users\o.iyer\PycharmProjects\PiHapp\accounts" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -338,12 +354,12 @@
       <workItem from="1561456300270" duration="23000" />
       <workItem from="1561498095561" duration="3035000" />
       <workItem from="1561769322250" duration="7531000" />
-      <workItem from="1562186015921" duration="3181000" />
+      <workItem from="1562186015921" duration="3464000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="184533000" />
+    <option name="totallyTimeSpent" value="184816000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -407,14 +423,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/pih_app/preview.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/pih_app/personal-dashboard/items-need-organizing.html" />
     <entry file="file://$PROJECT_DIR$/templates/pih_app/personal-dashboard/rejected.html" />
     <entry file="file://$PROJECT_DIR$/templates/pih_app/personal-dashboard/approved.html" />
     <entry file="file://$PROJECT_DIR$/templates/pih_app/modals/approve-modal.html">
@@ -424,7 +432,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt" />
     <entry file="file://$PROJECT_DIR$/templates/pih_app/modals/reject-modal.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -671,7 +678,7 @@
     <entry file="file://$PROJECT_DIR$/templates/pih_app/personal-dashboard/view-approved-requests.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
-          <caret line="31" column="80" lean-forward="true" selection-start-line="31" selection-start-column="80" selection-end-line="31" selection-end-column="80" />
+          <caret line="31" column="80" selection-start-line="31" selection-start-column="80" selection-end-line="31" selection-end-column="80" />
         </state>
       </provider>
     </entry>
@@ -720,6 +727,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-85">
           <caret line="154" column="24" selection-start-line="154" selection-start-column="24" selection-end-line="154" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Procfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="20" selection-start-column="20" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/runtime.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
