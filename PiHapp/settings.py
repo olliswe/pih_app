@@ -24,9 +24,6 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, "static")
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ")l5hum4&5-86by*r9x1$bush4_loi)mq5rv0j+-*#=38r4ujk^"
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -130,13 +127,6 @@ USE_TZ = True
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [STATIC_DIR]
 
-EMAIL_HOST = "smtp.gmail.com"
-
-EMAIL_HOST_USER = "oliveriyer@gmail.com"
-
-EMAIL_HOST_PASSWORD = "Kahn1995"
-
-EMAIL_PORT = 587
 
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"
