@@ -16,6 +16,8 @@ While developing the system, I worked very closely with stakeholders, to ensure 
 
 The team is currently trialing the tool, and plan to roll it out across the organization in 2020.
 
+You can find out more on [my website](https://www.oliveriyer.com/partners-in-health-sierra-leone-visitor-approval-system/).
+
 
 
 
