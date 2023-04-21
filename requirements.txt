@@ -9,6 +9,6 @@ gunicorn==19.9.0
 mysqlclient==1.4.2.post1
 psycopg2==2.8.3
 pytz==2019.1
-sqlparse==0.3.0
+sqlparse==0.4.4
 toml==0.10.0
 whitenoise==4.1.2
